@@ -6,7 +6,8 @@ class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
-      showMobileMenu: false
+      showMobileMenu: false,
+      navLinks: ['o mnie', 'portfolio', 'kontakt']
     };
   }
   openMobileMenu = () => {
@@ -37,25 +38,20 @@ class Nav extends React.Component {
           </span>
           {/* TODO: CHANGE TO ROUTER LINKS */}
           <ul className="nav__list">
-            <li className="nav__list-item">
-              <a className="nav__list-link" href="#">
-                O mnie
-              </a>
-            </li>
-            <li className="nav__list-item">
-              <a className="nav__list-link" href="#">
-                Portfolio
-              </a>
-            </li>
-            <li className="nav__list-item">
-              <a className="nav__list-link" href="#">
-                Kontakt
-              </a>
-            </li>
+            {this.state.navLinks.map(function(navLink, index) {
+              return (
+                <li className="nav__list-item" key={`navLink${index}`}>
+                  <a className="nav__list-link" href="#">
+                    {navLink}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
     );
   }
 }
+
 export default Nav;
