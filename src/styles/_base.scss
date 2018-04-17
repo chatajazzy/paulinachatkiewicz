@@ -15,7 +15,6 @@ html {
 }
 
 body {
-  overflow: hidden;
   height: 100vh;
   border: 15px solid $dark-gray;
 }
@@ -31,10 +30,67 @@ a {
   color: $dark-gray;
 }
 
-#root,
-.app {
-  height: 100%;
-}
 .app {
   background: $white;
+}
+
+.main {
+  &__container {
+    @include min-screen(768px) {
+      display: flex;
+    }
+  }
+  &__section {
+    padding: 10px 15px 50px;
+    @include min-screen(768px) {
+      width: 50%;
+      height: 87vh;
+    }
+    @include min-screen(1024px) {
+      padding: 10px 70px 50px;
+    }
+    &:first-child {
+      padding: 65px 15px 10px;
+      @include min-screen(768px) {
+        padding: 10px 15px 50px;
+      }
+      @include min-screen(1024px) {
+        padding: 10px 70px 50px;
+      }
+    }
+    &--dark {
+      background: $dark-gray;
+    }
+  }
+  &__title {
+    font-size: 28px;
+    font-family: $font-serif;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    color: $dark-gray;
+    &--light {
+      color: $white;
+    }
+  }
+}
+
+.skills {
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 80px 80px;
+    grid-column-gap: 15px;
+    grid-row-gap: 30px;
+    justify-items: center;
+    max-width: 600px;
+    margin: auto;
+    @include min-screen(1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: initial;
+    }
+    @include min-screen(1200px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      max-width: initial;
+    }
+  }
 }
