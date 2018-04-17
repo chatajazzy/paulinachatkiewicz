@@ -1,13 +1,18 @@
 import React from 'react';
 import MobileMenuOpen from './MobileMenuOpen';
 import MobileMenuClose from './MobileMenuClose';
+import { NavLink } from 'react-router-dom';
 
 class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
       showMobileMenu: false,
-      navLinks: ['o mnie', 'portfolio', 'kontakt']
+      navLinks: [
+        { name: 'o mnie', link: 'about' },
+        { name: 'portfolio', link: 'works' },
+        { name: 'kontakt', link: 'contact' }
+      ]
     };
   }
   openMobileMenu = () => {
@@ -36,14 +41,18 @@ class Nav extends React.Component {
               closeMobileMenu={this.closeMobileMenu}
             />
           </span>
-          {/* TODO: CHANGE TO ROUTER LINKS */}
           <ul className="nav__list">
             {this.state.navLinks.map(function(navLink, index) {
               return (
                 <li className="nav__list-item" key={`navLink${index}`}>
-                  <a className="nav__list-link" href="#">
-                    {navLink}
-                  </a>
+                  <NavLink
+                    exact
+                    to={navLink.link}
+                    className="nav__list-link"
+                    activeClassName="active"
+                  >
+                    {navLink.name}
+                  </NavLink>
                 </li>
               );
             })}
