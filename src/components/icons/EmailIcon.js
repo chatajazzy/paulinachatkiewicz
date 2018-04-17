@@ -19,4 +19,5 @@ const EmailIcon = props => {
     </svg>
   );
 };
+
 export default EmailIcon;

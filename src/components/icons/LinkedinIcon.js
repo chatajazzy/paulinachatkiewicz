@@ -18,4 +18,5 @@ const LinkedinIcon = props => {
     </svg>
   );
 };
+
 export default LinkedinIcon;

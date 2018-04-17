@@ -18,4 +18,5 @@ const FacebookIcon = props => {
     </svg>
   );
 };
+
 export default FacebookIcon;

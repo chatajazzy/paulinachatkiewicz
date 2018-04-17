@@ -18,4 +18,5 @@ const CodepenIcon = props => {
     </svg>
   );
 };
+
 export default CodepenIcon;

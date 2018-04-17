@@ -18,4 +18,5 @@ const GithubIcon = props => {
     </svg>
   );
 };
+
 export default GithubIcon;
