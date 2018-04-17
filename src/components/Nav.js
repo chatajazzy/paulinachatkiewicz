@@ -41,6 +41,7 @@ class Nav extends React.Component {
               closeMobileMenu={this.closeMobileMenu}
             />
           </span>
+          {/* TODO: change mobile menu state after redirect*/}
           <ul className="nav__list">
             {this.state.navLinks.map(function(navLink, index) {
               return (
