@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway:400,700&subset=latin-ext');
 
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   margin: 0;
@@ -10,6 +14,11 @@ html {
   background: $dark-gray;
 }
 
+body {
+  overflow: hidden;
+  height: 100vh;
+  border: 15px solid $dark-gray;
+}
 ul,
 li {
   list-style-type: none;
@@ -27,6 +36,5 @@ a {
   height: 100%;
 }
 .app {
-  margin: 15px;
   background: $white;
 }
