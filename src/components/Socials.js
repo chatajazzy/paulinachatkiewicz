@@ -1,9 +1,9 @@
 import React from 'react';
-import CodepenIcon from './CodepenIcon';
-import EmailIcon from './EmailIcon';
-import FacebookIcon from './FacebookIcon';
-import LinkedinIcon from './LinkedinIcon';
-import GithubIcon from './GithubIcon';
+import CodepenIcon from './icons/CodepenIcon';
+import EmailIcon from './icons/EmailIcon';
+import FacebookIcon from './icons/FacebookIcon';
+import LinkedinIcon from './icons/LinkedinIcon';
+import GithubIcon from './icons/GithubIcon';
 
 class Socials extends React.Component {
   render() {
