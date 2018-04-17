@@ -5,8 +5,8 @@
   position: absolute;
   top: -15px;
   left: -15px;
-  width: 75px;
-  height: 75px;
+  width: 85px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,8 +17,16 @@
     height: 100%;
   }
   &__logo {
-    // margin: 0 0 0 15px;
+    display: block;
     margin: 0;
     font-size: 22px;
+    transition: all 0.3s;
+    font-weight: $font-regular;
+    color: $white;
+
+    &:hover,
+    &:active {
+      font-weight: $font-bold;
+    }
   }
 }
