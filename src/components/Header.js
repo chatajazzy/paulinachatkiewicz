@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
+import { NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
   render() {
@@ -8,9 +9,14 @@ class Header extends React.Component {
         <header className="header">
           {/* TODO: consider moving to Logo component*/}
           <h1>
-            <a className="header__logo" href="#">
+            <NavLink
+              exact
+              to="/"
+              className="header__logo"
+              activeClassName="active"
+            >
               P/CH
-            </a>
+            </NavLink>
           </h1>
         </header>
         <Nav />
@@ -18,4 +24,5 @@ class Header extends React.Component {
     );
   }
 }
+
 export default Header;
