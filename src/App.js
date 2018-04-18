@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import Header from './components/Header';
 import Socials from './components/Socials';
 import NotFound from './components/NotFound';
@@ -19,7 +17,7 @@ class App extends Component {
         <Router>
           <div className="container">
             <Header />
-            <main>
+            <main className="main">
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />

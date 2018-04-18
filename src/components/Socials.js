@@ -12,27 +12,27 @@ class Socials extends React.Component {
         <footer className="socials">
           <ul className="socials__list">
             <li className="socials__list-item">
-              <a className="socials__list-link" href="#">
+              <a className="socials__list-link" href="http://google.com">
                 <CodepenIcon />
               </a>
             </li>
             <li className="socials__list-item">
-              <a className="socials__list-link" href="#">
+              <a className="socials__list-link" href="http://google.com">
                 <EmailIcon />
               </a>
             </li>
             <li className="socials__list-item">
-              <a className="socials__list-link" href="#">
+              <a className="socials__list-link" href="http://google.com">
                 <GithubIcon />
               </a>
             </li>
             <li className="socials__list-item">
-              <a className="socials__list-link" href="#">
+              <a className="socials__list-link" href="http://google.com">
                 <FacebookIcon />
               </a>
             </li>{' '}
             <li className="socials__list-item">
-              <a className="socials__list-link" href="#">
+              <a className="socials__list-link" href="http://google.com">
                 <LinkedinIcon />
               </a>
             </li>

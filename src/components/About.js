@@ -59,31 +59,31 @@ const About = props => {
         {/*TODO: check this animation with text sliding behind icons*/}
         <ul className="skills__list">
           <li className="skills__list-item">
-            <img src={reactIcon} />
+            <img src={reactIcon} alt="social-icon" />
           </li>
           <li className="skills__list-item">
-            <img src={sassIcon} />
+            <img src={sassIcon} alt="social-icon" />
           </li>
           <li className="skills__list-item">
-            <img src={javascriptIcon} />
+            <img src={javascriptIcon} alt="social-icon" />
           </li>
           <li className="skills__list-item">
-            <img src={wordpressIcon} />
+            <img src={wordpressIcon} alt="social-icon" />
           </li>
           <li className="skills__list-item">
-            <img src={webpackIcon} />
+            <img src={webpackIcon} alt="social-icon" />
           </li>
           <li className="skills__list-item">
-            <img src={reactIcon} />
+            <img src={reactIcon} alt="social-icon" />
           </li>
           <li className="skills__list-item">
-            <img src={sassIcon} />
+            <img src={sassIcon} alt="social-icon" />
           </li>
           <li className="skills__list-item">
-            <img src={javascriptIcon} />
+            <img src={javascriptIcon} alt="social-icon" />
           </li>
           <li className="skills__list-item">
-            <img src={wordpressIcon} />
+            <img src={wordpressIcon} alt="social-icon" />
           </li>
         </ul>
       </section>
