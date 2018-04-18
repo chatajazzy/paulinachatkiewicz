@@ -1,0 +1,79 @@
+.home {
+  &__hero-img {
+    width: 100%;
+    display: block;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+      url('./img/header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 94vh;
+    position: relative;
+    top: -2px;
+    @include min-screen(768px) {
+      background: url('./img/header.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  &__hero-title,
+  &__hero-subtitle {
+    color: $white;
+    margin: 0;
+    @include min-screen(768px) {
+      color: $dark-gray;
+      max-width: 330px;
+    }
+  }
+  &__hero-title {
+    font-size: 36px;
+    font-family: $font-serif;
+    font-weight: $font-bold;
+    @include min-screen(768px) {
+      font-size: 46px;
+    }
+    @include min-screen(1200px) {
+      font-size: 70px;
+    }
+  }
+  &__hero-subtitle {
+    font-size: 16px;
+    margin: 10px 0 15px;
+    @include min-screen(768px) {
+      font-size: 18px;
+    }
+    @include min-screen(1200px) {
+      font-size: 22px;
+    }
+  }
+  &__hero-cta {
+    display: block;
+    width: 100%;
+    border: none;
+    background: $white;
+    color: $dark-gray;
+    padding: 10px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    max-width: 120px;
+    transition: all 0.3s;
+    text-align: center;
+    @include min-screen(768px) {
+      background: $dark-gray;
+      color: $white;
+    }
+    @include min-screen(1200px) {
+      padding: 15px;
+    }
+    &:hover,
+    &:active {
+      background: $dark-gray;
+      color: $white;
+      @include min-screen(768px) {
+        background: $gold;
+      }
+    }
+  }
+}

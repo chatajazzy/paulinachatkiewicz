@@ -1,0 +1,20 @@
+.skills {
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 80px 80px;
+    grid-column-gap: 15px;
+    grid-row-gap: 30px;
+    justify-items: center;
+    max-width: 600px;
+    margin: auto;
+    @include min-screen(1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: initial;
+    }
+    @include min-screen(1200px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      max-width: initial;
+    }
+  }
+}

@@ -12,6 +12,7 @@ html {
   height: 100%;
   font-family: $font-sans-serif;
   background: $dark-gray;
+  overflow: hidden;
 }
 
 body {
@@ -35,31 +36,49 @@ a {
 }
 
 .main {
+  height: 90vh;
   &__container {
+    padding: 65px 0 10px;
     @include min-screen(768px) {
+      padding: 0;
       display: flex;
+    }
+    &--full-page {
+      padding: 0;
     }
   }
   &__section {
+    height: 90vh;
+
     padding: 10px 15px 50px;
     @include min-screen(768px) {
       width: 50%;
-      height: 87vh;
     }
     @include min-screen(1024px) {
       padding: 10px 70px 50px;
     }
-    &:first-child {
-      padding: 65px 15px 10px;
-      @include min-screen(768px) {
-        padding: 10px 15px 50px;
-      }
-      @include min-screen(1024px) {
-        padding: 10px 70px 50px;
-      }
-    }
     &--dark {
       background: $dark-gray;
+    }
+    &--full-page {
+      padding: 0;
+      @include min-screen(768px) {
+        position: relative;
+        top: -50px;
+      }
+    }
+    &--hero {
+      padding: 0;
+      position: absolute;
+      top: 60%;
+      left: 30px;
+      @include min-screen(768px) {
+        position: static;
+        transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
   &__title {
@@ -70,27 +89,6 @@ a {
     color: $dark-gray;
     &--light {
       color: $white;
-    }
-  }
-}
-
-.skills {
-  &__list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 80px 80px 80px;
-    grid-column-gap: 15px;
-    grid-row-gap: 30px;
-    justify-items: center;
-    max-width: 600px;
-    margin: auto;
-    @include min-screen(1024px) {
-      grid-template-columns: 1fr 1fr 1fr;
-      max-width: initial;
-    }
-    @include min-screen(1200px) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      max-width: initial;
     }
   }
 }

@@ -1,15 +1,15 @@
 .nav {
   background: $gold;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
   height: 100vh;
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 1;
   @include min-screen(768px) {
     display: flex;
     position: static;
@@ -17,6 +17,12 @@
     height: auto;
     width: 50%;
     margin-left: auto;
+  }
+  &--home {
+    background: none;
+    .nav__list-link {
+      color: $dark-gray;
+    }
   }
   &--open {
     display: flex;
@@ -89,6 +95,7 @@
     width: 65px;
     height: 65px;
     margin-right: 10px;
+    z-index: 1;
     @include min-screen(768px) {
       display: none;
     }
