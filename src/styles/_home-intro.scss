@@ -1,0 +1,36 @@
+.home-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // change to correct header height
+  padding-top: 50px;
+  height: 100%;
+  position: relative;
+  color: $dark-gray;
+
+  &__container {
+    text-align: center;
+  }
+  &__title {
+    font-family: $font-serif;
+    font-weight: $font-bold;
+    font-size: 45px;
+    line-height: 1.1;
+    @include min-screen(1024px) {
+      font-size: 55px;
+    }
+  }
+  &__subtitle {
+    margin-top: 15px;
+    font-size: 20px;
+    @include min-screen(1024px) {
+      font-size: 25px;
+    }
+  }
+  &__cta {
+    display: block;
+    margin-top: auto;
+    position: absolute;
+    bottom: 30px;
+  }
+}
