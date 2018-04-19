@@ -1,0 +1,119 @@
+.nav {
+  background: $gold;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  @include min-screen(768px) {
+    display: flex;
+    position: static;
+    background: $dark-gray;
+    height: auto;
+    width: 50%;
+    margin-left: auto;
+  }
+  &--open {
+    display: flex;
+  }
+  &__list {
+    width: 100%;
+    @include min-screen(768px) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &__list-item {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid $dark-gray;
+    transition: all 0.3s;
+    @include min-screen(768px) {
+      border-bottom: none;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover,
+    &:active {
+      background: $dark-gray;
+      @include min-screen(768px) {
+        background: none;
+      }
+    }
+  }
+  &__list-link {
+    display: block;
+    font-size: 28px;
+    color: $white;
+    text-transform: uppercase;
+    @include min-screen(768px) {
+      font-size: 18px;
+      color: $dark-gray;
+      transition: all 0.3s;
+      position: relative;
+
+      color: $white;
+
+      &:hover,
+      &:active {
+        color: $gold;
+        // TODO: some hover animation
+        // &:after {
+        //   content: '';
+        //   display: block;
+        //   position: absolute;
+        //   height: 8px;
+        //   top: 13px;
+        //   background: $gold;
+        //   width: 100%;
+        // }
+      }
+    }
+  }
+  &__close-icon,
+  &__open-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin-right: 10px;
+    z-index: 1;
+    @include min-screen(768px) {
+      display: none;
+    }
+    &:hover,
+    &:active {
+      cursor: pointer;
+      path {
+        fill: $gold;
+      }
+    }
+    path {
+      transition: all 0.3s;
+    }
+  }
+  &__close-icon {
+    margin-right: 0;
+    &:hover,
+    &:active {
+      cursor: pointer;
+      line {
+        stroke: $dark-gray;
+      }
+    }
+    line {
+      transition: all 0.3s;
+    }
+  }
+}

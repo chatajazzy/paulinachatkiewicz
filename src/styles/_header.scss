@@ -1,0 +1,31 @@
+.header {
+  font-family: $font-serif;
+  font-weight: 700;
+  color: $white;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 85px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $dark-gray;
+  z-index: 2;
+  &__container {
+    position: relative;
+  }
+  &__logo {
+    display: block;
+    margin: 0;
+    font-size: 22px;
+    transition: all 0.3s;
+    font-weight: $font-regular;
+    color: $white;
+
+    &:hover,
+    &:active {
+      font-weight: $font-bold;
+    }
+  }
+}
