@@ -1,0 +1,40 @@
+.header {
+  font-family: $font-serif;
+  font-weight: 700;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  padding: 30px;
+  height: 80px;
+
+  background: none;
+  z-index: 2;
+  &--open-nav {
+    height: 100%;
+    background: $pink;
+    color: $white;
+    .header__logo {
+      color: $white;
+    }
+  }
+  &__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: block;
+    margin: 0;
+    font-size: 25px;
+    transition: all 0.3s;
+    font-weight: $font-regular;
+    color: $dark-gray;
+    @include min-screen(1024px) {
+      font-size: 30px;
+    }
+    &:hover,
+    &:active {
+      font-weight: $font-bold;
+    }
+  }
+}
