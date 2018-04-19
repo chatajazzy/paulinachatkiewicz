@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 class Home extends React.Component {
   componentDidMount() {
     console.log('dsd', document.querySelector('.nav'));
-    document.querySelector('.nav').classList.add('nav--home');
+    document.body.classList.add('body--home');
   }
   componentWillUnmount() {
-    document.querySelector('.nav').classList.remove('nav--home');
+    document.body.classList.remove('body--home');
   }
   render() {
     return (

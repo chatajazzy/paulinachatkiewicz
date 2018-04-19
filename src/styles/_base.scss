@@ -12,12 +12,24 @@ html {
   height: 100%;
   font-family: $font-sans-serif;
   background: $dark-gray;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 body {
   height: 100vh;
   border: 15px solid $dark-gray;
+  &.body--home {
+    overflow: hidden;
+    .nav {
+      background: none;
+    }
+    .nav__list-link {
+      color: $white;
+      @include min-screen(768px) {
+        color: $dark-gray;
+      }
+    }
+  }
 }
 ul,
 li {
@@ -36,7 +48,9 @@ a {
 }
 
 .main {
-  height: 90vh;
+  min-height: 90vh;
+  height: 100%;
+
   &__container {
     padding: 65px 0 10px;
     @include min-screen(768px) {
@@ -48,7 +62,8 @@ a {
     }
   }
   &__section {
-    height: 90vh;
+    min-height: 90vh;
+    height: 100%;
 
     padding: 10px 15px 50px;
     @include min-screen(768px) {
@@ -64,14 +79,15 @@ a {
       padding: 0;
       @include min-screen(768px) {
         position: relative;
-        top: -50px;
+        top: -51px;
       }
     }
     &--hero {
-      padding: 0;
       position: absolute;
-      top: 60%;
-      left: 30px;
+      top: 100px;
+      display: flex;
+      align-items: center;
+      padding: 15px;
       @include min-screen(768px) {
         position: static;
         transform: none;

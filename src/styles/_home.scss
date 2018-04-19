@@ -9,7 +9,7 @@
     background-position: center;
     height: 94vh;
     position: relative;
-    top: -2px;
+    // top: -2px;
     @include min-screen(768px) {
       background: url('./img/header.jpg');
       background-repeat: no-repeat;
@@ -23,7 +23,7 @@
     margin: 0;
     @include min-screen(768px) {
       color: $dark-gray;
-      max-width: 330px;
+      max-width: 515px;
     }
   }
   &__hero-title {
@@ -54,7 +54,6 @@
     background: $white;
     color: $dark-gray;
     padding: 10px;
-    text-transform: uppercase;
     outline: none;
     cursor: pointer;
     max-width: 120px;

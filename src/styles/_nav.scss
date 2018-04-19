@@ -5,7 +5,6 @@
   right: 15px;
   bottom: 15px;
   left: 15px;
-  height: 100vh;
   display: none;
   align-items: center;
   justify-content: center;
@@ -17,12 +16,6 @@
     height: auto;
     width: 50%;
     margin-left: auto;
-  }
-  &--home {
-    background: none;
-    .nav__list-link {
-      color: $dark-gray;
-    }
   }
   &--open {
     display: flex;
