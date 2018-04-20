@@ -5,14 +5,10 @@ class Nav extends React.Component {
   constructor() {
     super();
     this.navLinks = [
-      { name: 'o mnie', link: 'about' },
-      { name: 'portfolio', link: 'works' },
-      { name: 'kontakt', link: 'contact' }
+      { name: 'O mnie', link: 'about', title: 'Dowiedz się kim jestem' },
+      { name: 'Portfolio', link: 'works', title: 'Zobacz moje prace' },
+      { name: 'Kontakt', link: 'contact', title: 'Skontaktuj się ze mną' }
     ];
-  }
-  componentWillUpdate() {
-    console.log('update nav');
-    // this.props.handleMenu;
   }
   render() {
     return (
@@ -28,9 +24,7 @@ class Nav extends React.Component {
                   activeClassName="active"
                 >
                   <span className="nav__item-name"> {navLink.name}</span>
-                  <span className="nav__item-label">
-                    Explore all artists' portfolios
-                  </span>
+                  <span className="nav__item-label">{navLink.title}</span>
                 </NavLink>
               </li>
             );
