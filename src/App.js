@@ -10,11 +10,35 @@ import Header from './components/Header';
 import './App.scss';
 
 class App extends Component {
+  // component={() => <Start socket={socket} addUser={addUser}/>}/>
+  constructor() {
+    super();
+    this.state = {
+      mobileMenuVisible: false
+    };
+  }
+  handleMenu = () => {
+    if (this.state.mobileMenuVisible === false) {
+      this.setState({
+        mobileMenuVisible: true
+      });
+    } else {
+      this.setState({
+        mobileMenuVisible: false
+      });
+    }
+  };
+  // componentDidUpdate() {
+  //   console.log('app', this.props.location.pathname);
+  // }
   render() {
     return (
       <Router>
         <div className="page-container">
-          <Header />
+          <Header
+            mobileMenuVisible={this.state.mobileMenuVisible}
+            handleMenu={this.handleMenu}
+          />
           <main className="main">
             <Switch>
               <Route exact path="/" component={Home} />

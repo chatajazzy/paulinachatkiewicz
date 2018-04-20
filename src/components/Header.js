@@ -1,50 +1,27 @@
 import React from 'react';
 import Nav from './Nav';
-import { NavLink } from 'react-router-dom';
+import Logo from './Logo';
 
 class Header extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      mobileMenuVisible: false
-    };
-  }
-  handleMenu = () => {
-    if (this.state.mobileMenuVisible === false) {
-      this.setState({
-        mobileMenuVisible: true
-      });
-    } else {
-      this.setState({
-        mobileMenuVisible: false
-      });
-    }
-    this.refs.nav.handleMenu(this.state.mobileMenuVisible);
-  };
   render() {
     return (
       <header
         className={
-          this.state.mobileMenuVisible ? 'header header--open-nav' : 'header'
+          this.props.mobileMenuVisible ? 'header header--open-nav' : 'header'
         }
       >
-        {/* TODO: consider moving to Logo component*/}
         <div className="header__navbar">
-          <h1>
-            <NavLink
-              exact
-              to="/"
-              className="header__logo"
-              activeClassName="active"
-            >
-              P/CH
-            </NavLink>
-          </h1>
-          <div className="header__trigger-nav" onClick={this.handleMenu}>
-            x
+          <Logo />
+          <div className="header__trigger-nav" onClick={this.props.handleMenu}>
+            <span className="header__trigger-nav-bar" />
+            <span className="header__trigger-nav-bar" />
           </div>
         </div>
-        <Nav ref="nav" mobileMenuVisible={this.state.mobileMenuVisible} />
+        <Nav
+          ref="nav"
+          mobileMenuVisible={this.props.mobileMenuVisible}
+          handleMenu={this.props.handleMenu}
+        />
       </header>
     );
   }

@@ -16,6 +16,20 @@
     .header__logo {
       color: $white;
     }
+    .header__trigger-nav {
+      padding-top: 8px;
+    }
+    .header__trigger-nav-bar {
+      background: $white;
+      &:nth-child(1) {
+        transform: rotate3d(0, 0, 1, 45deg);
+        top: 7px;
+      }
+      &:nth-child(2) {
+        transform: rotate3d(0, 0, 1, -45deg);
+        top: -3px;
+      }
+    }
   }
   &__navbar {
     display: flex;
@@ -36,5 +50,23 @@
     &:active {
       font-weight: $font-bold;
     }
+  }
+  &__trigger-nav {
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    padding-top: 10px;
+  }
+  &__trigger-nav-bar {
+    background: $dark-gray;
+    border-radius: 3px;
+    display: block;
+    height: 2px;
+    margin-top: 5px;
+    padding: 0;
+    position: relative;
+    transition: all 0.2s ease;
+    width: 30px;
+    margin: 8px auto 0;
   }
 }

@@ -1,6 +1,18 @@
 .nav {
   display: none;
   &--open {
+    height: calc(100% - 65px);
     display: block;
+  }
+  &__list {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__list-item {
+    text-align: center;
+  }
+  &__list-link {
+    font-size: 20px;
   }
 }

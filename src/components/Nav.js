@@ -10,13 +10,10 @@ class Nav extends React.Component {
       { name: 'kontakt', link: 'contact' }
     ];
   }
-  handleMenu = menuState => {
-    if (menuState === false) {
-      this.setState({ visible: true });
-    } else {
-      this.setState({ visible: false });
-    }
-  };
+  componentWillUpdate() {
+    console.log('update nav');
+    // this.props.handleMenu;
+  }
   render() {
     return (
       <nav className={this.props.mobileMenuVisible ? 'nav nav--open' : 'nav'}>
