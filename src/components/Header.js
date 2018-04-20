@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Nav from './Nav';
 import Logo from './Logo';
 
@@ -11,7 +12,7 @@ class Header extends React.Component {
         }
       >
         <div className="header__navbar">
-          <Logo />
+          <Logo handleMenu={this.props.handleMenu} />
           <div className="header__trigger-nav" onClick={this.props.handleMenu}>
             <span className="header__trigger-nav-bar" />
             <span className="header__trigger-nav-bar" />

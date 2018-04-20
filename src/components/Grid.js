@@ -10,4 +10,5 @@ const Grid = () => {
     </div>
   );
 };
+
 export default Grid;

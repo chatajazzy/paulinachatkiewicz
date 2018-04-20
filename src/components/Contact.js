@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ContactForm from './ContactForm';
 import Grid from './Grid';
 
@@ -32,4 +33,5 @@ class Contact extends React.Component {
     );
   }
 }
+
 export default Contact;

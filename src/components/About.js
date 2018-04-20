@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Grid from './Grid';
 import Paulina from '../img/paulina.jpg';
 
@@ -66,4 +67,5 @@ class About extends React.Component {
     );
   }
 }
+
 export default About;

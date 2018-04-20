@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import NotFound from './components/NotFound';
 import Home from './components/Home';
 import About from './components/About';
@@ -10,7 +11,6 @@ import Header from './components/Header';
 import './App.scss';
 
 class App extends Component {
-  // component={() => <Start socket={socket} addUser={addUser}/>}/>
   constructor() {
     super();
     this.state = {
@@ -28,9 +28,6 @@ class App extends Component {
       });
     }
   };
-  // componentDidUpdate() {
-  //   console.log('app', this.props.location.pathname);
-  // }
   render() {
     return (
       <Router>

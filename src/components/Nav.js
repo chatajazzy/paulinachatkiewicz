@@ -2,8 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 class Nav extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.navLinks = [
       { name: 'O mnie', link: 'about', title: 'Dowiedz się kim jestem' },
       { name: 'Portfolio', link: 'works', title: 'Zobacz moje prace' },
@@ -13,7 +13,7 @@ class Nav extends React.Component {
   render() {
     return (
       <nav className={this.props.mobileMenuVisible ? 'nav nav--open' : 'nav'}>
-        <ul className="nav__list">
+        <ul className="nav__list" onClick={this.props.handleMenu}>
           {this.navLinks.map(function(navLink, index) {
             return (
               <li className="nav__list-item" key={`navLink${index}`}>
@@ -23,7 +23,7 @@ class Nav extends React.Component {
                   className="nav__list-link"
                   activeClassName="active"
                 >
-                  <span className="nav__item-name"> {navLink.name}</span>
+                  <span className="nav__item-name">{navLink.name}</span>
                   <span className="nav__item-label">{navLink.title}</span>
                 </NavLink>
               </li>

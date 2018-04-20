@@ -1,13 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Logo = () => {
-  return (
-    <h1>
-      <NavLink exact to="/" className="header__logo" activeClassName="active">
-        P/CH
-      </NavLink>
-    </h1>
-  );
-};
+class Logo extends React.Component {
+  render() {
+    return (
+      <h1 onClick={this.props.handleMenu}>
+        <NavLink exact to="/" className="header__logo" activeClassName="active">
+          P/CH
+        </NavLink>
+      </h1>
+    );
+  }
+}
+
 export default Logo;
