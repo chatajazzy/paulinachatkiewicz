@@ -56,6 +56,10 @@
     height: 45px;
     width: 45px;
     padding-top: 10px;
+    &:hover,
+    &:active {
+      opacity: 0.55;
+    }
   }
   &__trigger-nav-bar {
     background: $dark-gray;
