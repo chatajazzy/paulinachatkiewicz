@@ -35,6 +35,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 #root,
 .page-container {
   width: 100%;
@@ -46,8 +50,4 @@ a {
   &--full-bg {
     background: $light-gray1;
   }
-}
-
-.main {
-  height: 100vh;
 }

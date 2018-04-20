@@ -2,6 +2,12 @@
 
 @import './styles/vars';
 @import './styles/base';
-@import './styles/nav';
+
+// BEM blocks
+@import './styles/about-photo';
+@import './styles/contact-form';
+@import './styles/grid';
 @import './styles/header';
 @import './styles/home-intro';
+@import './styles/main';
+@import './styles/nav';
