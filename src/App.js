@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  withRouter
-} from 'react-router-dom';
-import { TweenMax, TweenLite } from 'gsap';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { TweenLite } from 'gsap';
 import { Transition } from 'react-transition-group';
 import TransitionReplace from 'react-transition-replace';
 
