@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  withRouter
+} from 'react-router-dom';
+import { TweenMax, TweenLite } from 'gsap';
+import { Transition } from 'react-transition-group';
+import TransitionReplace from 'react-transition-replace';
 
 import NotFound from './components/NotFound';
 import Home from './components/Home';
@@ -9,6 +17,28 @@ import Works from './components/Works';
 import Header from './components/Header';
 
 import './App.scss';
+
+const animIn = node => {
+  TweenLite.set(node, {
+    y: '100%',
+    opacity: 0
+  });
+  TweenLite.to(node, 0.5, {
+    y: '0%',
+    opacity: 1
+  });
+};
+
+const animOut = node => {
+  TweenLite.set(node, {
+    x: '0%',
+    opacity: 1
+  });
+  TweenLite.to(node, 0.5, {
+    x: '-100%',
+    opacity: 0
+  });
+};
 
 class App extends Component {
   constructor() {
@@ -30,25 +60,33 @@ class App extends Component {
   };
   render() {
     return (
-      <Router>
-        <div className="page-container">
-          <Header
-            mobileMenuVisible={this.state.mobileMenuVisible}
-            handleMenu={this.handleMenu}
-          />
-          <main className="main">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/works" component={Works} />
-              <Route path="/contact" component={Contact} />
-              <Route component={NotFound} />
-            </Switch>
-          </main>
-        </div>
-      </Router>
+      <TransitionReplace>
+        <Transition
+          key={this.props.location.pathname}
+          timeout={500}
+          mountOnEnter={true}
+          onEnter={animIn}
+          onExit={animOut}
+        >
+          <div className="page-container">
+            <Header
+              mobileMenuVisible={this.state.mobileMenuVisible}
+              handleMenu={this.handleMenu}
+            />
+            <main className="main">
+              <Switch location={this.props.location}>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/works" component={Works} />
+                <Route path="/contact" component={Contact} />
+                <Route component={NotFound} />
+              </Switch>
+            </main>
+          </div>
+        </Transition>
+      </TransitionReplace>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
