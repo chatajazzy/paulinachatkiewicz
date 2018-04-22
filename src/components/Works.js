@@ -7,7 +7,6 @@ class Works extends React.Component {
     return (
       <div className="main__wrapper">
         <Grid />
-        <p>Works</p>
         <WorksSlider />
       </div>
     );

@@ -1,0 +1,9 @@
+.works-item {
+  @include min-screen(768px) {
+    width: 50% !important;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+  }
+}

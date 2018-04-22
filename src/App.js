@@ -9,28 +9,25 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Works from './components/Works';
+import WorksItemDetails from './components/WorksItemDetails';
 import Header from './components/Header';
 
 import './App.scss';
 
 const animIn = node => {
   TweenLite.set(node, {
-    y: '100%',
     opacity: 0
   });
   TweenLite.to(node, 0.5, {
-    y: '0%',
     opacity: 1
   });
 };
 
 const animOut = node => {
   TweenLite.set(node, {
-    x: '0%',
     opacity: 1
   });
   TweenLite.to(node, 0.5, {
-    x: '-100%',
     opacity: 0
   });
 };
@@ -73,6 +70,8 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/works" component={Works} />
+                {/*} <Route path="/works/:workId" component={WorksItemDetails} /> */}
+
                 <Route path="/contact" component={Contact} />
                 <Route component={NotFound} />
               </Switch>
