@@ -22,7 +22,7 @@ class ContactForm extends React.Component {
           <span className="contact-form__bottom-bar" />
           <label className="contact-form__label">Wiadomość</label>
         </div>
-        <button type="submit" className="contact-form__btn">
+        <button type="submit" className="btn">
           Wyślij
         </button>
       </form>

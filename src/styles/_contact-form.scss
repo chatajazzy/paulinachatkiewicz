@@ -71,23 +71,4 @@
       transition: left 0.2s ease-out, right 0.2s ease-out;
     }
   }
-  &__btn {
-    display: block;
-    width: 100%;
-    border: 1px solid $dark-gray;
-    background: none;
-    color: $dark-gray;
-    padding: 15px;
-    text-transform: uppercase;
-    outline: none;
-    cursor: pointer;
-    max-width: 200px;
-    margin: 0 auto;
-    transition: all 0.3s;
-    &:hover,
-    &:active {
-      background: $dark-gray;
-      color: $white;
-    }
-  }
 }
