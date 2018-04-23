@@ -13,7 +13,11 @@ class WorksItem extends React.Component {
               <p className="works-item__subtitle">{itemInfo.subtitle}</p>
             </div>
 
-            <img src={itemInfo.src} alt={itemInfo.title} />
+            <img
+              className="works-item__img"
+              src={itemInfo.src}
+              alt={itemInfo.title}
+            />
           </div>
         </Link>
       </div>
