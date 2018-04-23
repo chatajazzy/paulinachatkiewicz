@@ -9,7 +9,6 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Works from './components/Works';
-import WorksItemDetails from './components/WorksItemDetails';
 import Header from './components/Header';
 
 import './App.scss';
@@ -50,6 +49,7 @@ class App extends Component {
       });
     }
   };
+
   render() {
     return (
       <TransitionReplace>
@@ -70,7 +70,6 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/works" component={Works} />
-                {/*} <Route path="/works/:workId" component={WorksItemDetails} /> */}
 
                 <Route path="/contact" component={Contact} />
                 <Route component={NotFound} />
