@@ -1,9 +1,46 @@
 .works-item {
+  @include landscape() {
+    max-width: 50%;
+    margin: auto;
+    text-align: center;
+  }
   @include min-screen(768px) {
     width: 50% !important;
+    margin: auto;
   }
   &__link {
     display: flex;
     justify-content: center;
+  }
+  &__content {
+    position: relative;
+  }
+  &__info {
+    margin-bottom: 5%;
+
+    @include min-screen(1024px) {
+      position: absolute;
+      top: 50%;
+      transform: translate(-250px, -50%);
+      margin: 0;
+    }
+  }
+  &__title,
+  &__subtitle {
+    color: $dark-gray;
+  }
+  &__title {
+    font-size: 35px;
+    font-family: $font-serif;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    @include min-screen(1024px) {
+      font-size: 85px;
+    }
+  }
+  &__subtitle {
+    @include min-screen(1024px) {
+      font-size: 22px;
+    }
   }
 }
