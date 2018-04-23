@@ -16,11 +16,49 @@ class WorksItemDetails extends React.Component {
           </div>
         </Link>
         <div className="works-item-details__content">
-          <h3 className="works-item-details__title">{currentItemInfo.title}</h3>
-          <p className="works-item-details__subtitle">
-            {currentItemInfo.subtitle}
-          </p>
-          <img src={currentItemInfo.src} alt={currentItemInfo.title} />
+          <div className="works-item-details__info">
+            <h3 className="works-item-details__title">
+              {currentItemInfo.title}
+            </h3>
+            <p className="works-item-details__subtitle">
+              {currentItemInfo.subtitle}
+            </p>
+            <div className="works-item-details__btns">
+              <a className="btn works-item-details__btn" href="">
+                Kod
+              </a>
+              <a className="btn works-item-details__btn" href="">
+                Live
+              </a>
+            </div>
+            <ul className="works-item-details__paragraph-list">
+              <li>
+                <p className="works-item-details__paragraph">
+                  Lorem Ipsuóźniej zaczął być używany przemyśle elektronicznym,
+                  pozostając praktycznie niezmienionym. Spopularyzował się w
+                  latach 60. XX w. wraz z publikacją arkuszy Letrasetu,
+                  zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym
+                  różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do
+                  realizacji druków na komputerach osobistych, jak Aldus
+                  PageMaker
+                </p>
+              </li>
+              <li>
+                <p className="works-item-details__paragraph">
+                  Lorem Ipsum jest tekstem stosowanym jako przykładowy
+                  wypełniacz w przemyśle poligraficznym. Został po ręć wieków
+                  póź Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum
+                  oprogramowaniem przeznaczonym do realizacji druków na
+                  komputerach osobistych, jak Aldus PageMaker
+                </p>
+              </li>
+            </ul>
+          </div>
+          <img
+            className="works-item-details__img"
+            src={currentItemInfo.src}
+            alt={currentItemInfo.title}
+          />
         </div>
       </div>
     );
