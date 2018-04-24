@@ -1,9 +1,37 @@
 import React from 'react';
+import { TimelineMax } from 'gsap';
 
 import ContactForm from './ContactForm';
 import Grid from './Grid';
 
+import { contactParagraphs } from '../data/contact-paragraphs';
+
 class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.contactParagraphs = contactParagraphs;
+  }
+  componentDidMount() {
+    //TODO: refactor needed
+    const targetObject1 = document.querySelector('.main__content-title');
+    const targetObject2 = document.querySelector('.main__paragraph-list');
+    const targetObject3 = document.querySelector('.contact-form');
+
+    const stagingTimeline = new TimelineMax();
+
+    stagingTimeline
+      .from(targetObject1, 1, { y: 30, opacity: 0 })
+      .from(targetObject2, 1, { y: 60, opacity: 0 })
+      .from(targetObject3, 1, { y: -30, opacity: 0 })
+
+      .add('end', 2)
+
+      .to(targetObject1, 3, { y: 0, opacity: 1 }, 'end')
+      .to(targetObject2, 3, { y: 0, opacity: 1 }, 'end')
+      .to(targetObject3, 3, { y: 0, opacity: 1 }, 'end');
+
+    stagingTimeline.play();
+  }
   render() {
     return (
       <div className="main__wrapper">
@@ -14,17 +42,13 @@ class Contact extends React.Component {
           </header>
           <div className="main__inner-wrapper">
             <ul className="main__paragraph-list">
-              <li>
-                <p className="main__content-paragraph">
-                  Jeśli chciałbyś nawiązać współpracę skontaktuj się ze mną
-                  pisząc na adres kontakt@paulinachatkiewicz.pl
-                </p>
-              </li>
-              <li>
-                <p className="main__content-paragraph">
-                  Możesz też skorzystać z podanego formularza. :)
-                </p>
-              </li>
+              {this.contactParagraphs.map(function(item, index) {
+                return (
+                  <li key={`contactParagraphs${index}`}>
+                    <p className="main__content-paragraph">{item.paragraph}</p>
+                  </li>
+                );
+              })}
             </ul>
             <ContactForm />
           </div>
