@@ -1,11 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Preloader from './Preloader';
 
 class Home extends React.Component {
   componentDidMount() {
     document
       .querySelector('.page-container')
       .classList.add('page-container--full-bg');
+
+    // page preloader
+    setTimeout(() => {
+      document.body.classList.add('page-loaded');
+    }, 3000);
   }
   componentWillUnmount() {
     document
@@ -14,19 +20,22 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <div className="home-intro">
-        <div className="home-intro__container">
-          <h2 className="home-intro__title">Paulina Chatkiewicz</h2>
-          <p className="home-intro__subtitle">Front-end developer</p>
+      <div>
+        <Preloader />
+        <div className="home-intro">
+          <div className="home-intro__container">
+            <h2 className="home-intro__title">Paulina Chatkiewicz</h2>
+            <p className="home-intro__subtitle">Front-end developer</p>
+          </div>
+          <NavLink
+            exact
+            to="/works"
+            className="home-intro__cta"
+            activeClassName="active"
+          >
+            I
+          </NavLink>
         </div>
-        <NavLink
-          exact
-          to="/works"
-          className="home-intro__cta"
-          activeClassName="active"
-        >
-          I
-        </NavLink>
       </div>
     );
   }
