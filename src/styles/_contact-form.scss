@@ -71,4 +71,9 @@
       transition: left 0.2s ease-out, right 0.2s ease-out;
     }
   }
+  &__response-info {
+    width: 100%;
+    margin: 25px 0;
+    text-align: center;
+  }
 }
