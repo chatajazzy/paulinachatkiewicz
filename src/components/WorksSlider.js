@@ -24,7 +24,7 @@ class WorksSlider extends React.Component {
   }
 
   render() {
-    var settings = {
+    const settings = {
       infinite: true,
       speed: 500,
       initialSlide: 0,
@@ -32,8 +32,8 @@ class WorksSlider extends React.Component {
       arrows: false,
       swipe: true,
       draggable: false,
-      autoplay: false,
-      pauseOnHover: true
+      autoplay: true,
+      pauseOnHover: false
     };
     return (
       <div className="works-slider__container">
