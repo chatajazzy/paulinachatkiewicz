@@ -18,21 +18,27 @@ class Works extends React.Component {
         title: 'agencysite',
         subtitle: 'Statyczna strona www',
         content: 'blablablabla',
-        src: agencysite
+        src: agencysite,
+        linkCode: 'https://github.com/chatajazzy/graxpo',
+        linkLive: 'https://chatajazzy.github.io/graxpo'
       },
       {
         id: 'graxposite',
         title: 'graxposite',
         subtitle: 'Statyczna strona www',
         content: 'blablablabla',
-        src: graxposite
+        src: graxposite,
+        linkCode: 'https://github.com/chatajazzy/graxpo',
+        linkLive: 'https://chatajazzy.github.io/graxpo'
       },
       {
         id: 'linearsite',
         title: 'linearsite',
         subtitle: 'Statyczna strona www',
         content: 'blablablabla',
-        src: linearsite
+        src: linearsite,
+        linkCode: 'https://github.com/chatajazzy/graxpo',
+        linkLive: 'https://chatajazzy.github.io/graxpo'
       }
     ];
   }
