@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TweenMax, TimelineMax, CustomEase } from 'gsap';
+import { worksItemDetails } from '../data/works-item-details';
 
 class WorksItemDetails extends React.Component {
+  constructor(props) {
+    super(props);
+    this.worksItemDetails = worksItemDetails;
+  }
   componentDidMount() {
     //TODO: refactor needed
     const targetObject = document.querySelector('.works-item-details__title');
@@ -57,34 +62,31 @@ class WorksItemDetails extends React.Component {
               {currentItemInfo.subtitle}
             </p>
             <div className="works-item-details__btns">
-              <a className="btn works-item-details__btn" href="">
+              <a
+                className="btn works-item-details__btn"
+                href={currentItemInfo.linkCode}
+                target="_blank"
+              >
                 Kod
               </a>
-              <a className="btn works-item-details__btn" href="">
+              <a
+                className="btn works-item-details__btn"
+                href={currentItemInfo.linkLive}
+                target="_blank"
+              >
                 Live
               </a>
             </div>
             <ul className="works-item-details__paragraph-list">
-              <li>
-                <p className="works-item-details__paragraph">
-                  Lorem Ipsuóźniej zaczął być używany przemyśle elektronicznym,
-                  pozostając praktycznie niezmienionym. Spopularyzował się w
-                  latach 60. XX w. wraz z publikacją arkuszy Letrasetu,
-                  zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym
-                  różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do
-                  realizacji druków na komputerach osobistych, jak Aldus
-                  PageMaker
-                </p>
-              </li>
-              <li>
-                <p className="works-item-details__paragraph">
-                  Lorem Ipsum jest tekstem stosowanym jako przykładowy
-                  wypełniacz w przemyśle poligraficznym. Został po ręć wieków
-                  póź Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum
-                  oprogramowaniem przeznaczonym do realizacji druków na
-                  komputerach osobistych, jak Aldus PageMaker
-                </p>
-              </li>
+              {this.worksItemDetails.map(function(item, index) {
+                return (
+                  <li key={`worksItemDetail${index}`}>
+                    <p className="works-item-details__paragraph">
+                      {item.paragraph}
+                    </p>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <img
