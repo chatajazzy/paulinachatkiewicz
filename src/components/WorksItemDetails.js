@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TimelineMax } from 'gsap';
+import PropTypes from 'prop-types';
+
 import { worksItemDetails } from '../data/works-item-details';
 
 class WorksItemDetails extends React.Component {
@@ -98,5 +100,16 @@ class WorksItemDetails extends React.Component {
     );
   }
 }
+
+WorksItemDetails.propTypes = {
+  itemInfo: PropTypes.object,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  src: PropTypes.string,
+  paragraph: PropTypes.string,
+  linkLive: PropTypes.string,
+  linkCode: PropTypes.string
+};
 
 export default WorksItemDetails;

@@ -15,6 +15,7 @@ class ContactForm extends React.Component {
     this.successMsg = 'Wiadomość wysłana pomyślnie';
     this.errorMsg =
       'Podczas wysyłania wystąpił błąd. Odśwież stronę i spróbuj ponownie';
+    this.spinnerText = 'Wysyłanie';
   }
   handleChange = e => {
     const state = this.state;
@@ -111,7 +112,7 @@ class ContactForm extends React.Component {
         >
           Wyślij
         </button>
-        <Spinner spinner={this.state.spinner} />
+        <Spinner spinner={this.state.spinner} spinnerText={this.spinnerText} />
         <div className="contact-form__response-info" />
       </form>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Nav from './Nav';
 import Logo from './Logo';
@@ -30,5 +31,10 @@ class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+  mobileMenuVisible: PropTypes.bool,
+  handleMenu: PropTypes.func
+};
 
 export default Header;

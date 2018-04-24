@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import CloseOnEscape from 'react-close-on-escape';
+import PropTypes from 'prop-types';
 
 import { navLinks } from '../data/nav-links';
 
@@ -35,5 +36,10 @@ class Nav extends React.Component {
     );
   }
 }
+
+Nav.propTypes = {
+  mobileMenuVisible: PropTypes.bool,
+  handleMenu: PropTypes.func
+};
 
 export default Nav;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import WorksItem from './WorksItem';
+import PropTypes from 'prop-types';
 
 class WorksSlider extends React.Component {
   constructor(props) {
@@ -52,5 +53,9 @@ class WorksSlider extends React.Component {
     );
   }
 }
+
+WorksSlider.propTypes = {
+  items: PropTypes.array
+};
 
 export default WorksSlider;
