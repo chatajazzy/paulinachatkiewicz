@@ -1,9 +1,31 @@
 import React from 'react';
+import { TimelineMax } from 'gsap';
 
 import Grid from './Grid';
 import Paulina from '../img/paulina.jpg';
 
 class About extends React.Component {
+  componentDidMount() {
+    //TODO: refactor needed
+    const targetObject1 = document.querySelector('.main__content-title');
+    const targetObject2 = document.querySelector('.main__paragraph-list');
+    const targetObject3 = document.querySelector('.about-photo');
+
+    const stagingTimeline = new TimelineMax();
+
+    stagingTimeline
+      .from(targetObject1, 1, { y: 30, opacity: 0 })
+      .from(targetObject2, 1, { y: 60, opacity: 0 })
+      .from(targetObject3, 1, { y: -30, opacity: 0 })
+
+      .add('end', 2)
+
+      .to(targetObject1, 3, { y: 0, opacity: 1 }, 'end')
+      .to(targetObject2, 3, { y: 0, opacity: 1 }, 'end')
+      .to(targetObject3, 3, { y: 0, opacity: 1 }, 'end');
+
+    stagingTimeline.play();
+  }
   render() {
     return (
       <div className="main__wrapper">
