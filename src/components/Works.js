@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import Grid from './Grid';
 import WorksSlider from './WorksSlider';
 
 import agencysite from '../img/paulina.jpg';
