@@ -22,13 +22,7 @@ class Contact extends React.Component {
     stagingTimeline
       .from(targetObject1, 1, { y: 30, opacity: 0 })
       .from(targetObject2, 1, { y: 60, opacity: 0 })
-      .from(targetObject3, 1, { y: -30, opacity: 0 })
-
-      .add('end', 2)
-
-      .to(targetObject1, 3, { y: 0, opacity: 1 }, 'end')
-      .to(targetObject2, 3, { y: 0, opacity: 1 }, 'end')
-      .to(targetObject3, 3, { y: 0, opacity: 1 }, 'end');
+      .from(targetObject3, 1, { y: -30, opacity: 0 }, '-=0.5')
 
     stagingTimeline.play();
   }
