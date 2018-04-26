@@ -8,15 +8,12 @@ class Preloader extends React.Component {
           <div className="preloader__ball-wrap">
             <div className="preloader__ball" />
           </div>
-
           <div className="preloader__ball-wrap">
             <div className="preloader__ball" />
           </div>
-
           <div className="preloader__ball-wrap">
             <div className="preloader__ball" />
           </div>
-
           <div className="preloader__ball-wrap">
             <div className="preloader__ball" />
           </div>

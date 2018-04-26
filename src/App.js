@@ -3,7 +3,6 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import { TweenLite } from 'gsap';
 import { Transition } from 'react-transition-group';
 import TransitionReplace from 'react-transition-replace';
-
 import NotFound from './components/NotFound';
 import Home from './components/Home';
 import About from './components/About';
@@ -35,9 +34,21 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      mobileMenuVisible: false
+      mobileMenuVisible: false,
+      wasPreloaderShowed: false
     };
   }
+  handlePreloader = () => {
+    if (this.state.wasPreloaderShowed === false) {
+      this.setState({
+        wasPreloaderShowed: true
+      });
+    } else {
+      this.setState({
+        wasPreloaderShowed: false
+      });
+    }
+  };
   handleMenu = () => {
     if (this.state.mobileMenuVisible === false) {
       this.setState({
@@ -63,14 +74,24 @@ class App extends Component {
             <Header
               mobileMenuVisible={this.state.mobileMenuVisible}
               handleMenu={this.handleMenu}
+              wasPreloaderShowed={this.state.wasPreloaderShowed}
             />
             <main className="main">
               <Switch location={this.props.location}>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/works" component={Works} />
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <Home
+                      wasPreloaderShowed={this.state.wasPreloaderShowed}
+                      handlePreloader={this.handlePreloader}
+                    />
+                  )}
+                />
+                <Route exact path="/" component={About} />
+                <Route exact path="/works" component={Works} />
 
-                <Route path="/contact" component={Contact} />
+                <Route exact path="/contact" component={Contact} />
                 <Route component={NotFound} />
               </Switch>
             </main>
