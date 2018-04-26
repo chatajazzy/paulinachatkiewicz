@@ -6,9 +6,7 @@ class Logo extends React.Component {
   render() {
     return (
       <h1 onClick={this.props.mobileMenuVisible ? this.props.handleMenu : null}>
-        <NavLink exact to="/" className="header__logo" activeClassName="active">
-          P/CH
-        </NavLink>
+        <NavLink exact to="/" className="header__logo">P/CH</NavLink>
       </h1>
     );
   }

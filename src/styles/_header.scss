@@ -4,7 +4,7 @@
   position: fixed;
   width: 100%;
   left: 0;
-  padding: 30px;
+  padding: 15px 30px;
   height: 80px;
 
   background: none;
@@ -48,7 +48,7 @@
     }
     &:hover,
     &:active {
-      font-weight: $font-bold;
+      opacity: 0.55;
     }
   }
   &__trigger-nav {
