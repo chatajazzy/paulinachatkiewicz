@@ -102,7 +102,7 @@ class WorksItemDetails extends React.Component {
 }
 
 WorksItemDetails.propTypes = {
-  itemInfo: PropTypes.object,
+  itemInfo: PropTypes.array,
   id: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
