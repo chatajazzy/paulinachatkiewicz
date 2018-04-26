@@ -53,7 +53,7 @@
       z-index: -1;
       background: $white;
       transform: rotate3d(0, 0, 1, 45deg) scale3d(0, 1, 1);
-      transition: transform 0.5s;
+      transition: transform 0.75s ease-in-out;
     }
   }
   &__subtitle {
@@ -65,7 +65,7 @@
     bottom: 80px;
     opacity: 0;
     transform: translate3d(-10px, -10px, 0);
-    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.75s, opacity 0.75s;
     @include min-screen(1024px) {
       font-size: 25px;
     }
@@ -75,5 +75,24 @@
     margin-top: auto;
     position: absolute;
     bottom: 30px;
+    font-size: 35px;
+    color: $dark-gray;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+
+    &:hover,
+    &:active {
+      transform: translateY(10px) !important;
+      .home-intro__cta-info {
+        opacity: 1;
+      }
+    }
+  }
+  &__cta-info {
+    opacity: 0;
+    font-size: 12px;
+    display: block;
+    transition: all 0.5s ease-in-out;
+
   }
 }
