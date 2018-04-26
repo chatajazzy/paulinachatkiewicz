@@ -1,10 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TimelineMax } from 'gsap';
 
 import Nav from './Nav';
 import Logo from './Logo';
 
 class Header extends React.Component {
+  componentDidMount() {
+    const targetObject1 = document.querySelector('.header__logo');
+    const targetObject2 = document.querySelector('.header__trigger-nav');
+
+    const stagingTimeline = new TimelineMax();
+
+    if (!this.props.wasPreloaderShowed) {
+      setTimeout(() => {
+        stagingTimeline
+          .from(targetObject1, 1, { opacity: 0 })
+          .from(targetObject2, 1, { opacity: 0 }, '-=0.5');
+
+        stagingTimeline.play();
+      }, 2500);
+    } else {
+      stagingTimeline
+        .from(targetObject1, 1, { opacity: 0 })
+        .from(targetObject2, 1, { opacity: 0 }, '-=0.5');
+
+      stagingTimeline.play();
+    }
+  }
   render() {
     return (
       <header
@@ -16,6 +39,7 @@ class Header extends React.Component {
           <Logo
             handleMenu={this.props.handleMenu}
             mobileMenuVisible={this.props.mobileMenuVisible}
+            className="header__logo"
           />
           <div className="header__trigger-nav" onClick={this.props.handleMenu}>
             <span className="header__trigger-nav-bar" />
@@ -34,7 +58,8 @@ class Header extends React.Component {
 
 Header.propTypes = {
   mobileMenuVisible: PropTypes.bool,
-  handleMenu: PropTypes.func
+  handleMenu: PropTypes.func,
+  wasPreloaderShowed: PropTypes.bool
 };
 
 export default Header;
