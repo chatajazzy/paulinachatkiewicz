@@ -13,10 +13,12 @@
   }
   &__list-item {
     margin-bottom: 15px;
-    &:hover .nav__item-name:before,
-    &:focus .nav__item-name:before {
-      transform: scale3d(1, 1, 1);
-      transform-origin: 50% 0%;
+    &:hover,
+    &:focus {
+      .nav__item-name:before {
+        transform: scale3d(1, 1, 1);
+        transform-origin: 50% 0%;
+      }
     }
   }
   &__list-link {
