@@ -12,21 +12,11 @@ class Header extends React.Component {
 
     const stagingTimeline = new TimelineMax();
 
-    if (!this.props.wasPreloaderShowed) {
-      setTimeout(() => {
-        stagingTimeline
-          .from(targetObject1, 1, { opacity: 0 })
-          .from(targetObject2, 1, { opacity: 0 }, '-=0.5');
+    stagingTimeline
+      .from(targetObject1, 1, { opacity: 0 })
+      .from(targetObject2, 1, { opacity: 0 }, '-=0.5');
 
-        stagingTimeline.play();
-      }, 2500);
-    } else {
-      stagingTimeline
-        .from(targetObject1, 1, { opacity: 0 })
-        .from(targetObject2, 1, { opacity: 0 }, '-=0.5');
-
-      stagingTimeline.play();
-    }
+    stagingTimeline.play();
   }
   render() {
     return (
@@ -58,8 +48,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
   mobileMenuVisible: PropTypes.bool,
-  handleMenu: PropTypes.func,
-  wasPreloaderShowed: PropTypes.bool
+  handleMenu: PropTypes.func
 };
 
 export default Header;

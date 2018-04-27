@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Preloader from './Preloader';
 import { TimelineMax } from 'gsap';
 import PropTypes from 'prop-types';
 
@@ -15,26 +14,11 @@ class Home extends React.Component {
 
     const stagingTimeline = new TimelineMax();
 
-    // page preloader
-    if (!this.props.wasPreloaderShowed) {
-      setTimeout(() => {
-        document.body.classList.add('page-loaded');
+    stagingTimeline
+      .from(targetObject1, 1.5, { y: 60, opacity: 0 }, 0.75)
+      .from(targetObject2, 1, { y: 60, opacity: 0 }, '-=0.25');
 
-        this.props.handlePreloader();
-
-        stagingTimeline
-          .from(targetObject1, 1.5, { y: 60, opacity: 0 }, 0.75)
-          .from(targetObject2, 1, { y: 60, opacity: 0 }, '-=0.25');
-
-        stagingTimeline.play();
-      }, 2000);
-    } else {
-      stagingTimeline
-        .from(targetObject1, 1.5, { y: 60, opacity: 0 }, 0.75)
-        .from(targetObject2, 1, { y: 60, opacity: 0 }, '-=0.25');
-
-      stagingTimeline.play();
-    }
+    stagingTimeline.play();
   }
   componentWillUnmount() {
     document
@@ -44,7 +28,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Preloader />
         <div className="home-intro">
           <div className="home-intro__container">
             <h2 className="home-intro__title">Paulina Chatkiewicz</h2>
@@ -61,8 +44,7 @@ class Home extends React.Component {
 }
 
 Home.propTypes = {
-  handlePreloader: PropTypes.func,
-  wasPreloaderShowed: PropTypes.bool
+  handlePreloader: PropTypes.func
 };
 
 export default Home;

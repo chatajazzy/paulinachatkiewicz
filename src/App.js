@@ -9,6 +9,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Works from './components/Works';
 import Header from './components/Header';
+import Preloader from './components/Preloader';
 
 import './App.scss';
 
@@ -38,14 +39,19 @@ class App extends Component {
       wasPreloaderShowed: false
     };
   }
+  componentWillMount() {
+    if (!this.state.wasPreloaderShowed) {
+      setTimeout(() => {
+        document.body.classList.add('page-loaded');
+
+        this.handlePreloader();
+      }, 2500);
+    }
+  }
   handlePreloader = () => {
     if (this.state.wasPreloaderShowed === false) {
       this.setState({
         wasPreloaderShowed: true
-      });
-    } else {
-      this.setState({
-        wasPreloaderShowed: false
       });
     }
   };
@@ -74,23 +80,13 @@ class App extends Component {
             <Header
               mobileMenuVisible={this.state.mobileMenuVisible}
               handleMenu={this.handleMenu}
-              wasPreloaderShowed={this.state.wasPreloaderShowed}
             />
+            <Preloader />
             <main className="main">
               <Switch location={this.props.location}>
-                <Route
-                  exact
-                  path="/"
-                  render={() => (
-                    <Home
-                      wasPreloaderShowed={this.state.wasPreloaderShowed}
-                      handlePreloader={this.handlePreloader}
-                    />
-                  )}
-                />
+                <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/works" component={Works} />
-
                 <Route exact path="/contact" component={Contact} />
                 <Route component={NotFound} />
               </Switch>
