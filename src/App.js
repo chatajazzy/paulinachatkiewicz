@@ -45,7 +45,7 @@ class App extends Component {
         document.body.classList.add('page-loaded');
 
         this.handlePreloader();
-      }, 2500);
+      }, 2000);
     }
   }
   handlePreloader = () => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TimelineMax } from 'gsap';
-import PropTypes from 'prop-types';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -15,8 +14,8 @@ class Home extends React.Component {
     const stagingTimeline = new TimelineMax();
 
     stagingTimeline
-      .from(targetObject1, 1.5, { y: 60, opacity: 0 }, 0.75)
-      .from(targetObject2, 1, { y: 60, opacity: 0 }, '-=0.25');
+      .from(targetObject1, 1.5, { y: 60, opacity: 1 }, 0.75)
+      .from(targetObject2, 1, { y: 60, opacity: 1 }, '-=0.25');
 
     stagingTimeline.play();
   }
@@ -42,9 +41,5 @@ class Home extends React.Component {
     );
   }
 }
-
-Home.propTypes = {
-  handlePreloader: PropTypes.func
-};
 
 export default Home;
