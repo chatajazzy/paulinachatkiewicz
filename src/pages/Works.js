@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import WorksSlider from './WorksSlider';
+import WorksSlider from '../components/WorksSlider';
 
 import agencysite from '../img/paulina.jpg';
 import graxposite from '../img/graxposite.jpg';

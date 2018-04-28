@@ -15,7 +15,7 @@ class Nav extends React.Component {
       <nav className={this.props.mobileMenuVisible ? 'nav nav--open' : 'nav'}>
         <CloseOnEscape onEscape={this.props.handleMenu}>
           <ul className="nav__list" onClick={this.props.handleMenu}>
-            {this.navLinks.map(function(navLink, index) {
+            {this.navLinks.map((navLink, index) => {
               return (
                 <li className="nav__list-item" key={`navLink${index}`}>
                   <NavLink

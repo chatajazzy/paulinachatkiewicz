@@ -1,7 +1,7 @@
 import React from 'react';
 import { TimelineMax } from 'gsap';
 
-import Grid from './Grid';
+import Grid from '../components/Grid';
 import Paulina from '../img/paulina.jpg';
 
 import { aboutParagraphs } from '../data/about-paragraphs';

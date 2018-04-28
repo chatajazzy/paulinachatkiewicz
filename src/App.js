@@ -3,14 +3,14 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import { TweenLite } from 'gsap';
 import { Transition } from 'react-transition-group';
 import TransitionReplace from 'react-transition-replace';
-import NotFound from './components/NotFound';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Works from './components/Works';
+import NotFound from './pages/NotFound';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Works from './pages/Works';
 import Header from './components/Header';
 import Preloader from './components/Preloader';
-
+import ProgressBar from './components/ProgressBar';
 import './App.scss';
 
 const animIn = node => {
@@ -32,13 +32,10 @@ const animOut = node => {
 };
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      mobileMenuVisible: false,
-      wasPreloaderShowed: false
-    };
-  }
+  state = {
+    mobileMenuVisible: false,
+    wasPreloaderShowed: false
+  };
   componentWillMount() {
     if (!this.state.wasPreloaderShowed) {
       setTimeout(() => {
@@ -80,13 +77,14 @@ class App extends Component {
             <Header
               mobileMenuVisible={this.state.mobileMenuVisible}
               handleMenu={this.handleMenu}
+              wasPreloaderShowed={this.state.wasPreloaderShowed}
             />
-            <Preloader />
+            {/*<Preloader />*/}
             <main className="main">
               <Switch location={this.props.location}>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
-                <Route exact path="/works" component={Works} />
+                <Route path="/works" component={Works} />
                 <Route exact path="/contact" component={Contact} />
                 <Route component={NotFound} />
               </Switch>

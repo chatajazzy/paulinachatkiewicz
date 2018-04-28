@@ -1,8 +1,8 @@
 import React from 'react';
 import { TimelineMax } from 'gsap';
 
-import ContactForm from './ContactForm';
-import Grid from './Grid';
+import ContactForm from '../components/ContactForm';
+import Grid from '../components/Grid';
 
 import { contactParagraphs } from '../data/contact-paragraphs';
 
@@ -22,7 +22,7 @@ class Contact extends React.Component {
     stagingTimeline
       .from(targetObject1, 1, { y: 30, opacity: 0 })
       .from(targetObject2, 1, { y: 60, opacity: 0 })
-      .from(targetObject3, 1, { y: -30, opacity: 0 }, '-=0.5')
+      .from(targetObject3, 1, { y: -30, opacity: 0 }, '-=0.5');
 
     stagingTimeline.play();
   }
