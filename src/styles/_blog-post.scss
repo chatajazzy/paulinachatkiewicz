@@ -1,0 +1,49 @@
+.blog-post {
+  box-shadow: 0 2px 6px #dddbdb;
+  padding: 20px;
+  margin-bottom: 20px;
+  @include min-screen(768px) {
+    width: 50%;
+  }
+  @include min-screen(1024px) {
+    width: 33.33%;
+  }
+  @include min-screen(1300px) {
+    width: 25%;
+  }
+  &__category,
+  &__post-time {
+    font-size: 13px;
+    opacity: 0.65;
+  }
+  &__category {
+    text-transform: uppercase;
+    color: $dark-gray;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+  }
+  &__header {
+    margin: 10px 0;
+  }
+  &__heading {
+    font-size: 28px;
+    font-family: $font-serif;
+    font-weight: $font-bold;
+    color: $dark-gray;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:active {
+      color: $gold;
+    }
+  }
+  &__paragraph {
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  &__post-time {
+    margin-top: 20px;
+  }
+}

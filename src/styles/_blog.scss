@@ -1,0 +1,11 @@
+.blog {
+  &__posts {
+    @include min-screen(768px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &__posts-header {
+    width: 100%;
+  }
+}

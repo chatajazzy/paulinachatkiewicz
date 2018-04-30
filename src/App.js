@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
 import Works from './pages/Works';
 import Header from './components/Header';
 import Preloader from './components/Preloader';
@@ -85,6 +86,7 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route path="/works" component={Works} />
+                <Route path="/blog" component={Blog} />
                 <Route exact path="/contact" component={Contact} />
                 <Route component={NotFound} />
               </Switch>
