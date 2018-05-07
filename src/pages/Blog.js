@@ -1,97 +1,51 @@
 import React from 'react';
+import Search from '../components/Search';
+import { Link } from 'react-router-dom';
+import BlogPost from './BlogPost';
+import { TimelineMax } from 'gsap';
 
 class Blog extends React.Component {
+  state = {
+    posts: []
+  };
+  componentDidMount = () => {
+    const targetObject1 = document.querySelector('.main__content-title');
+    const targetObject2 = document.querySelector('.blog__posts');
+
+    const stagingTimeline = new TimelineMax();
+
+    stagingTimeline
+      .from(targetObject1, 1, { y: 30, opacity: 0 })
+      .from(targetObject2, 1, { y: 60, opacity: 0 });
+
+    stagingTimeline.play();
+
+    const postsApi =
+      'http://admin.paulinachatkiewicz.test.test/wp-json/wp/v2/posts';
+
+    fetch(postsApi)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          posts: response
+        });
+      });
+  };
+
   render() {
+    let posts = this.state.posts.map(post => {
+      return <BlogPost key={post.id} postInfo={post} />;
+    });
     return (
-      <div className="main__wrapper">
-        <section className="main__content">
-          <header className="main__content-header">
-            <h2 className="main__content-title">Blog</h2>
-          </header>
-          <div className="blog__categories">blog-categories</div>
-          <div className="blog__search">blog-search</div>
-          <section className="blog__posts">
-            <header className="blog__posts-header">
-              <h2 className="blog__posts-heading">Najnowsze wpisy</h2>
+      <div>
+        <div className="main__wrapper">
+          <section className="main__content">
+            <header className="main__content-header">
+              <h2 className="main__content-title">Blog</h2>
             </header>
-            <article className="blog-post">
-              <a href="#" className="blog-post__category">
-                programowanie
-              </a>
-              <header className="blog-post__header">
-                <h3>
-                  <a href="#" className="blog-post__heading">
-                    Tytul wpisu
-                  </a>
-                </h3>
-              </header>
-              <p className="blog-post__paragraph">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-                similique quos vel illo, dolorem eum veniam non ipsam beatae
-                aperiam itaque voluptas incidunt? Possimus nisi sit unde
-                accusamus exercitationem fuga!
-              </p>
-              <p className="blog-post__post-time">21 minut temu</p>
-            </article>
-            <article className="blog-post">
-              <a href="#" className="blog-post__category">
-                programowanie
-              </a>
-              <header className="blog-post__header">
-                <h3>
-                  <a href="#" className="blog-post__heading">
-                    Tytul wpisu
-                  </a>
-                </h3>
-              </header>
-              <p className="blog-post__paragraph">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-                similique quos vel illo, dolorem eum veniam non ipsam beatae
-                aperiam itaque voluptas incidunt? Possimus nisi sit unde
-                accusamus exercitationem fuga!
-              </p>
-              <p className="blog-post__post-time">21 minut temu</p>
-            </article>
-            <article className="blog-post">
-              <a href="#" className="blog-post__category">
-                programowanie
-              </a>
-              <header className="blog-post__header">
-                <h3>
-                  <a href="#" className="blog-post__heading">
-                    Tytul wpisu
-                  </a>
-                </h3>
-              </header>
-              <p className="blog-post__paragraph">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-                similique quos vel illo, dolorem eum veniam non ipsam beatae
-                aperiam itaque voluptas incidunt? Possimus nisi sit unde
-                accusamus exercitationem fuga!
-              </p>
-              <p className="blog-post__post-time">21 minut temu</p>
-            </article>
-            <article className="blog-post">
-              <a href="#" className="blog-post__category">
-                programowanie
-              </a>
-              <header className="blog-post__header">
-                <h3>
-                  <a href="#" className="blog-post__heading">
-                    Tytul wpisu
-                  </a>
-                </h3>
-              </header>
-              <p className="blog-post__paragraph">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-                similique quos vel illo, dolorem eum veniam non ipsam beatae
-                aperiam itaque voluptas incidunt? Possimus nisi sit unde
-                accusamus exercitationem fuga!
-              </p>
-              <p className="blog-post__post-time">21 minut temu</p>
-            </article>
+            <section className="blog__posts">{posts}</section>
           </section>
-        </section>
+        </div>
       </div>
     );
   }
