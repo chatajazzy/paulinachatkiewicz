@@ -13,6 +13,7 @@ import Header from './components/Header';
 import Preloader from './components/Preloader';
 import ProgressBar from './components/ProgressBar';
 import './App.scss';
+import BlogPostPage from './pages/BlogPostPage';
 
 const animIn = node => {
   TweenLite.set(node, {
@@ -86,7 +87,9 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route path="/works" component={Works} />
-                <Route path="/blog" component={Blog} />
+                <Route exact path="/blog" component={Blog} />
+                <Route path="/blog/:id" component={BlogPostPage} />
+
                 <Route exact path="/contact" component={Contact} />
                 <Route component={NotFound} />
               </Switch>
