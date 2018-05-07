@@ -1,5 +1,4 @@
 import React from 'react';
-import Search from '../components/Search';
 import { Link } from 'react-router-dom';
 import BlogPost from './BlogPost';
 import { TimelineMax } from 'gsap';
