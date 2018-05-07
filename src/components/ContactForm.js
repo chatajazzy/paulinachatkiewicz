@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Spinner from './Spinner';
+import InputText from './InputText';
 
 class ContactForm extends React.Component {
   constructor() {
@@ -40,11 +41,7 @@ class ContactForm extends React.Component {
       .post(`/mail.php`, data)
       .then(response => {
         responseInfo.textContent = this.successMsg;
-        this.setState({
-          name: '',
-          email: '',
-          message: ''
-        });
+        this.setState({ name: '', email: '', message: '' });
       })
       .catch(function(error) {
         return (responseInfo.textContent = this.errorMsg);
@@ -53,43 +50,34 @@ class ContactForm extends React.Component {
         this.setState({
           spinner: false
         });
-      });
+      })
+      .then(
+        setTimeout(() => {
+          responseInfo.textContent = '';
+        }, 2000)
+      );
   };
   render() {
     return (
       <form className="contact-form" onSubmit={this.sendEmail}>
-        <div className="contact-form__element-container">
-          <input
-            type="text"
-            required
-            id="name"
-            name="name"
-            className="contact-form__element"
-            onChange={this.handleChange}
-            value={this.state.name}
-          />
-          <span className="contact-form__highlight" />
-          <span className="contact-form__bottom-bar" />
-          <label className="contact-form__label" htmlFor="name">
-            Imię
-          </label>
-        </div>
-        <div className="contact-form__element-container">
-          <input
-            type="email"
-            required
-            id="email"
-            name="email"
-            className="contact-form__element"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <span className="contact-form__highlight" />
-          <span className="contact-form__bottom-bar" />
-          <label className="contact-form__label" htmlFor="email">
-            Email
-          </label>
-        </div>
+        <InputText
+          type="text"
+          required={true}
+          id="name"
+          name="name"
+          handleChange={this.handleChange}
+          value={this.state.name}
+          label="Imię"
+        />
+        <InputText
+          type="text"
+          required={true}
+          id="email"
+          name="email"
+          handleChange={this.handleChange}
+          value={this.state.email}
+          label="Email"
+        />
         <div className="contact-form__element-container contact-form__element-container--full-width">
           <textarea
             required
