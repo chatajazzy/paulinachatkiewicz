@@ -20,7 +20,7 @@ class Nav extends React.Component {
                 <li className="nav__list-item" key={`navLink${index}`}>
                   <NavLink
                     exact
-                    to={navLink.link}
+                    to={`/${navLink.link}`}
                     className="nav__list-link"
                     activeClassName="active"
                   >
