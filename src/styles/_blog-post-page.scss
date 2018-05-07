@@ -1,0 +1,40 @@
+.blog-post-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto;
+}
+
+.blog-post {
+  &__btn {
+    margin: 25px 0 0;
+    text-align: center;
+    max-width: 120px;
+    background: $dark-gray;
+    color: $white;
+    font-size: 12px;
+    &:hover,
+    &:active {
+      color: $dark-gray;
+      background: $white;
+    }
+  }
+}
+
+.blog-post-details {
+  box-shadow: 0 2px 6px #dddbdb;
+  padding: 15px;
+  @include min-screen(1200px) {
+    padding: 45px;
+  }
+  &__title {
+    color: $dark-gray;
+    font-size: 45px;
+    margin-bottom: 15px;
+    font-family: $font-serif;
+  }
+  &__paragraph {
+    color: $dark-gray;
+    margin-bottom: 15px;
+    line-height: 1.7;
+  }
+}

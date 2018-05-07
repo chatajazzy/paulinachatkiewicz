@@ -4,9 +4,11 @@
 @import './styles/base';
 
 // BEM blocks
+@import './styles/btn';
+
 @import './styles/blog';
 @import './styles/blog-post';
-@import './styles/btn';
+@import './styles/blog-post-page';
 @import './styles/about-photo';
 @import './styles/contact-form';
 @import './styles/grid';
