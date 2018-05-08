@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BlogPost from './BlogPost';
 import { TimelineMax } from 'gsap';
+
+import BlogPost from './BlogPost';
 
 class Blog extends React.Component {
   state = {
@@ -19,7 +20,7 @@ class Blog extends React.Component {
 
     stagingTimeline.play();
 
-    const postsApi = 'http://testportfolio.prv.pl/admin/wp-json/wp/v2/posts';
+    const postsApi = 'http://testwordpress.test//wp-json/wp/v2/posts';
 
     fetch(postsApi)
       .then(response => response.json())

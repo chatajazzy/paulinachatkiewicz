@@ -2,15 +2,15 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-class Logo extends React.Component {
-  render() {
-    return (
-      <h1 onClick={this.props.mobileMenuVisible ? this.props.handleMenu : null}>
-        <NavLink exact to="/" className="header__logo">P/CH</NavLink>
-      </h1>
-    );
-  }
-}
+const Logo = props => {
+  return (
+    <h1 onClick={props.mobileMenuVisible ? props.handleMenu : null}>
+      <NavLink exact to="/" className="header__logo">
+        P/CH
+      </NavLink>
+    </h1>
+  );
+};
 
 Logo.propTypes = {
   mobileMenuVisible: PropTypes.bool,

@@ -7,10 +7,7 @@ import Grid from '../components/Grid';
 import { contactParagraphs } from '../data/contact-paragraphs';
 
 class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-    this.contactParagraphs = contactParagraphs;
-  }
+  contactParagraphs = contactParagraphs;
   componentDidMount() {
     //TODO: refactor needed
     const targetObject1 = document.querySelector('.main__content-title');
@@ -32,7 +29,7 @@ class Contact extends React.Component {
         <Grid />
         <section className="main__content">
           <header className="main__content-header">
-            <h2 className="main__content-title">contact</h2>
+            <h2 className="main__content-title">kontakt</h2>
           </header>
           <div className="main__inner-wrapper">
             <ul className="main__paragraph-list">

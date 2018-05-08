@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const InputText = props => {
   return (
@@ -19,6 +20,16 @@ const InputText = props => {
       </label>
     </div>
   );
+};
+
+InputText.propTypes = {
+  text: PropTypes.string,
+  required: PropTypes.string,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  handleChange: PropTypes.func,
+  value: PropTypes.string,
+  label: PropTypes.string
 };
 
 export default InputText;

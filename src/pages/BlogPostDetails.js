@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BlogPostDetails = props => {
   return (
@@ -9,6 +10,11 @@ const BlogPostDetails = props => {
       <p className="blog-post-details__paragraph">{props.content}</p>
     </article>
   );
+};
+
+BlogPostDetails.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string
 };
 
 export default BlogPostDetails;

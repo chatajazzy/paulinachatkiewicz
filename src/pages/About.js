@@ -7,10 +7,7 @@ import Paulina from '../img/paulina.jpg';
 import { aboutParagraphs } from '../data/about-paragraphs';
 
 class About extends React.Component {
-  constructor(props) {
-    super(props);
-    this.aboutParagraphs = aboutParagraphs;
-  }
+  aboutParagraphs = aboutParagraphs;
   componentDidMount() {
     //TODO: refactor needed
     const targetObject1 = document.querySelector('.main__content-title');

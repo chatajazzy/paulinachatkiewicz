@@ -8,7 +8,7 @@ export default class BlogPostPage extends Component {
   };
   componentDidMount() {
     const postSlug = this.props.match.params.id;
-    const postApi = `http://testportfolio.prv.pl/admin/wp-json/wp/v2/posts?slug=${postSlug}`;
+    const postApi = `http://testwordpress.test//wp-json/wp/v2/posts?slug=${postSlug}`;
     fetch(postApi)
       .then(response => response.json())
       .then(response => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const BlogPost = props => {
   const { date, excerpt, slug } = props.postInfo;
@@ -22,6 +23,10 @@ const BlogPost = props => {
       </Link>
     </article>
   );
+};
+
+BlogPost.propTypes = {
+  postInfo: PropTypes.obj
 };
 
 export default BlogPost;
