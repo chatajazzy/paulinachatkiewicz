@@ -1,23 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TimelineMax } from 'gsap';
 
 import Nav from './Nav';
 import Logo from './Logo';
 
 class Header extends React.Component {
-  componentDidMount() {
-    const targetObject1 = document.querySelector('.header__logo');
-    const targetObject2 = document.querySelector('.header__trigger-nav');
-
-    const stagingTimeline = new TimelineMax();
-
-    stagingTimeline
-      .from(targetObject1, 1, { opacity: 0 })
-      .from(targetObject2, 1, { opacity: 0 }, '-=0.5');
-
-    stagingTimeline.play();
-  }
   render() {
     return (
       <header
