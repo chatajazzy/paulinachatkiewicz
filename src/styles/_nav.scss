@@ -1,8 +1,10 @@
 .nav {
   display: none;
+  opacity: 0;
   &--open {
     height: calc(100% - 65px);
     display: block;
+    animation: 0.5s fadeIn ease-in 1 forwards 0.1s;
   }
   &__list {
     position: relative;
@@ -56,5 +58,14 @@
     span {
       display: inline-block;
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
