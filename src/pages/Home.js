@@ -1,19 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Particles from 'react-particles-js';
+
 import { particlesConfig } from '../data/particles-config';
 
 class Home extends React.Component {
-  componentDidMount() {
-    document
-      .querySelector('.page-container')
-      .classList.add('page-container--full-bg');
-  }
-  componentWillUnmount() {
-    document
-      .querySelector('.page-container')
-      .classList.remove('page-container--full-bg');
-  }
   render() {
     return (
       <div>
