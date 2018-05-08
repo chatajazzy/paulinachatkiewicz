@@ -19,15 +19,18 @@ class Blog extends React.Component {
 
     stagingTimeline.play();
 
-    const postsApi =
-      'http://admin.paulinachatkiewicz.test.test/wp-json/wp/v2/posts';
+    const postsApi = 'http://testportfolio.prv.pl/admin/wp-json/wp/v2/posts';
 
     fetch(postsApi)
       .then(response => response.json())
       .then(response => {
+        console.log('responseBlog', response);
         this.setState({
           posts: response
         });
+      })
+      .catch(error => {
+        console.log('error: ', error);
       });
   };
 
