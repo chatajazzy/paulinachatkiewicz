@@ -1,23 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TimelineMax } from 'gsap';
+import Particles from 'react-particles-js';
+import { particlesConfig } from '../data/particles-config';
 
 class Home extends React.Component {
   componentDidMount() {
     document
       .querySelector('.page-container')
       .classList.add('page-container--full-bg');
-
-    const targetObject1 = document.querySelector('.home-intro__container');
-    const targetObject2 = document.querySelector('.home-intro__cta');
-
-    const stagingTimeline = new TimelineMax();
-
-    stagingTimeline
-      .from(targetObject1, 1.5, { y: 60, opacity: 1 }, 0.75)
-      .from(targetObject2, 1, { y: 60, opacity: 1 }, '-=0.25');
-
-    stagingTimeline.play();
   }
   componentWillUnmount() {
     document
@@ -27,6 +17,18 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        <Particles
+          className="home-particles"
+          params={particlesConfig}
+          style={{
+            width: '100%',
+            background: '#ffffff',
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            zIndex: '1'
+          }}
+        />
         <div className="home-intro">
           <div className="home-intro__container">
             <h2 className="home-intro__title">Paulina Chatkiewicz</h2>
