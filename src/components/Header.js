@@ -24,7 +24,6 @@ class Header extends React.Component {
           </div>
         </div>
         <Nav
-          ref="nav"
           mobileMenuVisible={this.props.mobileMenuVisible}
           handleMenu={this.props.handleMenu}
         />
