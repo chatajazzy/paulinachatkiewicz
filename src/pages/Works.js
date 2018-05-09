@@ -3,19 +3,20 @@ import { Route } from 'react-router-dom';
 
 import WorksSlider from '../components/WorksSlider';
 
-import agencysite from '../img/paulina.jpg';
-import graxposite from '../img/graxposite.jpg';
-import linearsite from '../img/linearsite.jpg';
+// import agencysite from '../img/paulina.jpg';
+// import graxposite from '../img/graxposite.jpg';
+// import linearsite from '../img/linearsite.jpg';
 
 import WorksItemDetails from './WorksItemDetails';
 class Works extends React.Component {
+  placeholderImg = 'http://placehold.it/800x800';
   items = [
     {
       id: 'agencysite',
       title: 'agencysite',
       subtitle: 'Statyczna strona www',
       content: 'blablablabla',
-      src: agencysite,
+      src: this.placeholderImg,
       linkCode: 'https://github.com/chatajazzy/graxpo',
       linkLive: 'https://chatajazzy.github.io/graxpo'
     },
@@ -24,7 +25,7 @@ class Works extends React.Component {
       title: 'graxposite',
       subtitle: 'Statyczna strona www',
       content: 'blablablabla',
-      src: graxposite,
+      src: this.placeholderImg,
       linkCode: 'https://github.com/chatajazzy/graxpo',
       linkLive: 'https://chatajazzy.github.io/graxpo'
     },
@@ -33,7 +34,7 @@ class Works extends React.Component {
       title: 'linearsite',
       subtitle: 'Statyczna strona www',
       content: 'blablablabla',
-      src: linearsite,
+      src: this.placeholderImg,
       linkCode: 'https://github.com/chatajazzy/graxpo',
       linkLive: 'https://chatajazzy.github.io/graxpo'
     }

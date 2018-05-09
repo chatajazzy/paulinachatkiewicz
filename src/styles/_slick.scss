@@ -13,6 +13,12 @@
   overflow: hidden;
   @include landscape() {
     bottom: 30px;
+    text-align: right;
+  }
+  @include min-screen(1024px) {
+    @include landscape() {
+      text-align: center;
+    }
   }
   button {
     &:before {

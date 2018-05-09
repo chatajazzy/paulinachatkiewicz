@@ -5,8 +5,14 @@
     text-align: center;
   }
   @include min-screen(768px) {
-    width: 50% !important;
+    width: 50%;
     margin: auto;
+    @include landscape() {
+      width: 45%;
+    }
+  }
+  @include min-screen(1024px) {
+    width: 55%;
   }
   &__link {
     display: flex;
@@ -30,11 +36,22 @@
   &__info {
     margin-bottom: 5%;
     z-index: 99;
+    @include landscape() {
+      margin-bottom: initial;
+      position: absolute;
+      left: -50%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
     @include min-screen(1024px) {
       position: absolute;
       top: 50%;
-      transform: translate(-250px, -50%);
+      transform: translate(-200px, -50%);
       margin: 0;
+      text-align: left;
+      @include landscape() {
+        transform: translate(0, -50%);
+      }
     }
   }
   &__title,
