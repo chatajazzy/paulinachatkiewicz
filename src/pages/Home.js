@@ -8,18 +8,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Particles
-          className="home-particles"
-          params={particlesConfig}
-          style={{
-            width: '100%',
-            background: '#ffffff',
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            zIndex: '1'
-          }}
-        />
+        <Particles className="home-particles" params={particlesConfig} />
         <div className="home-intro">
           <div className="home-intro__container">
             <h2 className="home-intro__title">Paulina Chatkiewicz</h2>
