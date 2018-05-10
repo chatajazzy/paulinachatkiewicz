@@ -8,9 +8,9 @@
   text-transform: uppercase;
   outline: none;
   cursor: pointer;
-  max-width: 200px;
+  max-width: 150px;
   margin: 0 auto;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
   &:hover,
   &:active {
     background: $dark-gray;
