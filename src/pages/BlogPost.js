@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const BlogPost = props => {
-  const { date, excerpt, slug } = props.postInfo;
+  const { date, slug } = props.postInfo;
   return (
     <article className="blog-post">
       <a href="#" className="blog-post__category">
