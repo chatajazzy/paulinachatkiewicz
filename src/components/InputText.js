@@ -5,7 +5,7 @@ const InputText = props => {
   return (
     <div className="contact-form__element-container">
       <input
-        type={props.text}
+        type={props.type}
         required={props.required}
         id={props.id}
         name={props.name}
@@ -23,8 +23,8 @@ const InputText = props => {
 };
 
 InputText.propTypes = {
-  text: PropTypes.string,
-  required: PropTypes.string,
+  type: PropTypes.string,
+  required: PropTypes.bool,
   id: PropTypes.string,
   name: PropTypes.string,
   handleChange: PropTypes.func,
