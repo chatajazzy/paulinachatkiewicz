@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
+
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Blog from './pages/Blog';
 import Works from './pages/Works';
 import Header from './components/Header';
 import Preloader from './components/Preloader';
 import ProgressBar from './components/ProgressBar';
+
 import './App.scss';
-import BlogPostPage from './pages/BlogPostPage';
 
 class App extends Component {
   state = {
@@ -52,8 +52,6 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route path="/works" component={Works} />
-            <Route exact path="/blog" component={Blog} />
-            <Route path="/blog/:id" component={BlogPostPage} />
             <Route exact path="/contact" component={Contact} />
             <Route component={NotFound} />
           </Switch>
