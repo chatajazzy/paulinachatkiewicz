@@ -6,7 +6,7 @@ import App from './App';
 
 const Root = () => {
   return (
-    <Router>
+    <Router basename="/paulinachatkiewicz">
       <App />
     </Router>
   );
