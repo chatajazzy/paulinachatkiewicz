@@ -1,0 +1,22 @@
+@import './styles/mixins/media-queries';
+
+@import './styles/vars';
+@import './styles/base';
+
+// BEM blocks
+@import './styles/btn';
+
+@import './styles/about-photo';
+@import './styles/contact-form';
+@import './styles/grid';
+@import './styles/header';
+@import './styles/home-intro';
+@import './styles/home-particles';
+@import './styles/main';
+@import './styles/nav';
+@import './styles/not-found';
+@import './styles/preloader';
+@import './styles/slick';
+@import './styles/spinner';
+@import './styles/works-item';
+@import './styles/works-item-details';

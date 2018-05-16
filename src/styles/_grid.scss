@@ -1,0 +1,32 @@
+$grid-border: 1px solid $gray;
+$grid-bp: 600px;
+.grid {
+  position: absolute;
+  top: -20vh;
+  left: 0;
+  z-index: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  opacity: 0.18;
+  transition: opacity 700ms cubic-bezier(0.8, 0, 0.55, 0.94);
+  .column {
+    border-left: $grid-border;
+    flex: 1;
+    height: 110%;
+    display: none;
+    &--mobile {
+      display: block;
+      &:nth-child(2) {
+        border-right: $grid-border;
+        @include min-screen($grid-bp) {
+          border-left: $grid-border;
+          border-right: 0px;
+        }
+      }
+    }
+    @include min-screen($grid-bp) {
+      display: block;
+    }
+  }
+}

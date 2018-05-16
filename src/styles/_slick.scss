@@ -1,0 +1,45 @@
+.slick-initialized .slick-track {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.slick-slide img {
+  margin: auto;
+}
+
+.slick-dots {
+  bottom: 80px;
+  overflow: hidden;
+  @include landscape() {
+    bottom: 30px;
+    text-align: right;
+  }
+  @include min-screen(1024px) {
+    @include landscape() {
+      text-align: center;
+    }
+  }
+  button {
+    &:before {
+      transition: all 0.3s ease;
+      opacity: 0.5 !important;
+      font-size: 30px !important;
+      content: '|' !important;
+      display: block !important;
+      color: $dark-gray !important;
+    }
+    &:hover {
+      &:before {
+        opacity: 1 !important;
+      }
+    }
+  }
+  .slick-active {
+    button {
+      &:before {
+        opacity: 1 !important;
+      }
+    }
+  }
+}
