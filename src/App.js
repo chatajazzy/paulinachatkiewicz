@@ -7,8 +7,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Works from './pages/Works';
 import Header from './components/Header';
-import Preloader from './components/Preloader';
-import ProgressBar from './components/ProgressBar';
 
 import './App.scss';
 
