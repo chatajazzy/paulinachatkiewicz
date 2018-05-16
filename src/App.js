@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';
@@ -51,7 +51,6 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route path="/works" component={Works} />
             <Route exact path="/contact" component={Contact} />
-            <Route component={NotFound} />
           </Switch>
         </main>
       </div>
@@ -59,4 +58,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;
