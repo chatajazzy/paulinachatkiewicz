@@ -43,7 +43,7 @@ class ContactForm extends React.Component {
         responseInfo.textContent = this.successMsg;
         this.setState({ name: '', email: '', message: '' });
       })
-      .catch(function(error) {
+      .catch(error => {
         return (responseInfo.textContent = this.errorMsg);
       })
       .then(() => {
