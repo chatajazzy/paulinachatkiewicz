@@ -46,7 +46,7 @@ class App extends Component {
           wasPreloaderShowed={this.state.wasPreloaderShowed}
         />
         <main className="main">
-          <Switch location={this.props.location}>
+          <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route path="/works" component={Works} />
