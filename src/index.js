@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
+import { HashRouter as Router } from 'react-router-dom';
 
 import App from './App';
 
-const history = createBrowserHistory({ basename: '/paulinachatkiewicz' });
-
 const Root = () => {
-  return (
-    <Router history={history}>
+  return ( 
+    <Router>
       <App />
     </Router>
   );
