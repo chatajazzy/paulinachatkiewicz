@@ -87,6 +87,7 @@
     margin-top: 25px;
     margin-left: 0;
     max-width: 140px;
+    text-align: center;
     @include min-screen(768px) {
       margin: 25px auto;
       max-width: 200px;
