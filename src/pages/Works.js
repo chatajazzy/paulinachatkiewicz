@@ -11,7 +11,6 @@ import fluxStore from '../img/fluxstore-mockup.jpg';
 import WorksItemDetails from './WorksItemDetails';
 
 class Works extends React.Component {
-  placeholderImg = 'http://placehold.it/800x800';
   items = [{
       id: 'expensify',
       title: 'expensify',

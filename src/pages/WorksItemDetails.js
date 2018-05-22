@@ -82,7 +82,7 @@ class WorksItemDetails extends React.Component {
               </a>
             </div>
             <ul className="works-item-details__paragraph-list">
-              {this.worksItemDetails.map(function(item, index) {
+              {this.worksItemDetails[currentItemInfo.id].map(function(item, index) {
                 return (
                   <li key={`worksItemDetail${index}`}>
                     <p className="works-item-details__paragraph">
