@@ -1,0 +1,7 @@
+.about-photo {
+  margin: 0;
+  padding: 25px 0;
+  @include min-screen(768px) {
+    padding: 50px 0 50px;
+  }
+}

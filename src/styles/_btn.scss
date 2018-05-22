@@ -1,0 +1,19 @@
+.btn {
+  display: block;
+  width: 100%;
+  border: 1px solid $dark-gray;
+  background: none;
+  color: $dark-gray;
+  padding: 15px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  max-width: 150px;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  &:hover,
+  &:active {
+    background: $dark-gray;
+    color: $white;
+  }
+}

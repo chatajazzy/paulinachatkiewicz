@@ -1,0 +1,118 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $white;
+  z-index: 9;
+  .page-loaded & {
+    z-index: -2;
+    opacity: 0;
+    transition: all 0.8s 1s ease-out;
+  }
+  .no-js & {
+    display: none;
+  }
+  &__content {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: calc(50% + 50px);
+    left: calc(50% + 50px);
+    opacity: 0;
+    animation: fadeIn 1s 1;
+    animation-fill-mode: forwards;
+    z-index: 10;
+  }
+  &__info {
+    position: relative;
+    position: relative;
+    top: 115px;
+    right: 85px;
+  }
+  &__ball-wrap:nth-child(2),
+  &__ball-wrap:nth-child(2) .preloader__ball,
+  &__ball-wrap:nth-child(2):after {
+    animation-delay: -400ms;
+  }
+  &__ball-wrap:nth-child(3),
+  &__ball-wrap:nth-child(3) .preloader__ball,
+  &__ball-wrap:nth-child(3):after {
+    animation-delay: -800ms;
+  }
+  &__ball-wrap:nth-child(4),
+  &__ball-wrap:nth-child(4) .preloader__ball,
+  &__ball-wrap:nth-child(4):after {
+    animation-delay: -1200ms;
+  }
+  &__ball-wrap:nth-child(5),
+  &__ball-wrap:nth-child(5) .preloader__ball,
+  &__ball-wrap:nth-child(5):after {
+    animation-delay: -1600ms;
+  }
+  &__ball-wrap {
+    animation: translateX 1000ms infinite ease-in-out alternate;
+    position: absolute;
+    &:after {
+      content: '';
+      width: 50px;
+      height: 7.5px;
+      background: $dark-gray;
+      position: absolute;
+      bottom: 0;
+      top: 70px;
+      border-radius: 50%;
+      animation: scale 500ms infinite ease-in-out alternate;
+    }
+    &:nth-child(2) {
+      .preloader__ball {
+        background-color: $gold;
+      }
+    }
+    &:nth-child(3) {
+      .preloader__ball {
+        background-color: $pink;
+      }
+    }
+    &:nth-child(4) {
+      .preloader__ball {
+        background-color: $light-gray1;
+      }
+    }
+    &:nth-child(5) {
+      .preloader__ball {
+        background-color: $gray;
+      }
+    }
+  }
+  &__ball {
+    width: 50px;
+    height: 50px;
+    box-shadow: -6.25px -6.25px 0 rgba(0, 0, 0, 0.1) inset;
+    background-color: $light-gray2;
+    border-radius: 50%;
+    animation: translateY 500ms infinite ease-in-out alternate;
+  }
+}
+
+@keyframes translateX {
+  100% {
+    transform: translateX(-150px);
+  }
+}
+@keyframes translateY {
+  100% {
+    transform: translateY(-187.5px);
+  }
+}
+@keyframes scale {
+  100% {
+    transform: scale(0.85);
+  }
+}
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}

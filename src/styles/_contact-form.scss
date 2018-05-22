@@ -1,0 +1,80 @@
+.contact-form {
+  margin: 50px 0;
+  @include min-screen(768px) {
+    margin: 20px 0;
+  }
+  @include min-screen(600px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @include min-screen(768px) {
+    padding-top: 70px;
+  }
+  &__element-container {
+    position: relative;
+    margin-bottom: 30px;
+    @include min-screen(600px) {
+      width: 48%;
+    }
+    @include min-screen(768px) {
+      width: 100%;
+    }
+    @include min-screen(1024px) {
+      width: 48%;
+    }
+    &--full-width {
+      @include min-screen(600px) {
+        width: 100%;
+      }
+    }
+  }
+  &__element {
+    border: none;
+    border-bottom: 1px solid $dark-gray;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    &:focus {
+      outline: none;
+      max-height: initial;
+    }
+    &:focus ~ label,
+    &:valid ~ label {
+      top: -10px;
+      font-size: 14px;
+      color: $gold;
+    }
+    &:focus ~ .contact-form__bottom-bar:before {
+      left: 0;
+      right: 0;
+    }
+  }
+  &__label {
+    position: absolute;
+    color: $dark-gray;
+    top: 12px;
+    left: 0;
+    transition: 0.2s ease all;
+  }
+  &__bottom-bar {
+    position: relative;
+    display: block;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      background: $gold;
+      height: 4px;
+      transition: left 0.2s ease-out, right 0.2s ease-out;
+    }
+  }
+  &__response-info {
+    width: 100%;
+    margin: 25px 0;
+    text-align: center;
+  }
+}
