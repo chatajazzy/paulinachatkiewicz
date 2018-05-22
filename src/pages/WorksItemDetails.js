@@ -21,6 +21,7 @@ class WorksItemDetails extends React.Component {
       '.works-item-details__paragraph-list'
     );
     const targetObject5 = document.querySelector('.works-item-details__btns');
+    const targetObject6 = document.querySelector('.works-item-details__close')
 
     const stagingTimeline = new TimelineMax();
 
@@ -30,6 +31,7 @@ class WorksItemDetails extends React.Component {
       .from(targetObject3, 1, { y: -30, opacity: 0 })
       .from(targetObject4, 1, { y: 60, opacity: 0 })
       .from(targetObject5, 1, { opacity: 0 })
+      .from(targetObject6, 1, { opacity: 0 })
 
       .add('end', 2)
 
@@ -37,6 +39,7 @@ class WorksItemDetails extends React.Component {
       .to(targetObject2, 3, { y: 0, opacity: 1 }, 'end')
       .to(targetObject3, 3, { y: 0, opacity: 1 }, 'end')
       .to(targetObject4, 3, { y: 0, opacity: 1 }, 'end')
+      .to(targetObject6, 1, { opacity: 1 })
       .to(targetObject5, 3, { opacity: 1 }, 'end');
 
     stagingTimeline.play();
