@@ -1,4 +1,6 @@
 .works-item {
+  opacity: 0;
+  animation: 1s fadeIn ease-in 1 forwards 0.5s;
   @include landscape() {
     max-width: 50%;
     margin: auto;
@@ -20,37 +22,21 @@
   }
   &__content {
     position: relative;
-    // viniette
-    // &:after {
-    //   @include min-screen(1024px) {
-    //     box-shadow: inset 0px 0px 150px 60px rgba(255, 255, 255, 0.8);
-    //     content: '';
-    //     position: absolute;
-    //     top: 0%;
-    //     left: 0%;
-    //     width: 100%;
-    //     height: 100%;
-    //   }
-    // }
   }
   &__info {
     margin-bottom: 5%;
     z-index: 99;
+    text-align: center;
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
     @include landscape() {
-      margin-bottom: initial;
-      position: absolute;
-      left: -50%;
-      top: 50%;
-      transform: translate(0, -50%);
-    }
-    @include min-screen(1024px) {
-      position: absolute;
-      top: 50%;
-      transform: translate(-200px, -50%);
-      margin: 0;
-      text-align: left;
-      @include landscape() {
-        transform: translate(0, -50%);
+      @include max-screen(768px) {
+        text-align: left;
+        top: 50%;
+        left: -50%;
+        transform: translateY(50%);
       }
     }
   }
@@ -64,7 +50,7 @@
     font-weight: $font-bold;
     text-transform: uppercase;
     @include min-screen(1024px) {
-      font-size: 85px;
+      font-size: 75px;
     }
   }
   &__subtitle {
@@ -72,10 +58,13 @@
       font-size: 22px;
     }
   }
-  &__img {
-    // for b&w
-    // @include min-screen(1024px) {
-    //   filter: grayscale(100%);
-    // }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
