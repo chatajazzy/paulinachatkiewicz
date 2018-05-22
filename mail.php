@@ -23,24 +23,13 @@ try {
 
     //Recipients
     $mail->setFrom('kontakt@paulinachatkiewicz.pl', 'Paulina Chatkiewicz');
-    $mail->addAddress('kontakt@paulinachatkiewicz.pl', 'Paulina Chatkiewicz');     // Add a recipient
-
-
-    //Attachments
-    //Content
-    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->addAddress('kontakt@paulinachatkiewicz.pl', 'Paulina Chatkiewicz');  
+    $mail->isHTML(true);                                 
     $mail->Subject = $mail->Username;
     $mail->Body    = '<strong>Email: </strong>' . $_POST['email'] . '<br/><strong>Name: </strong>' . $_POST['name'] . '<br/><strong>Message: </strong>' . $_POST['message'];
 
     $mail->AltBody = 'Message from contact form at http://paulinachatkiewicz.pl';
 
-    $mail->SMTPOptions = array(
-      'ssl' => array(
-          'verify_peer' => false,
-          'verify_peer_name' => false,
-          'allow_self_signed' => true
-      )
-  );
     $mail->send();
     echo 'Message has been sent';
 } catch (Exception $e) {
