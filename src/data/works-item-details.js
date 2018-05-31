@@ -14,4 +14,11 @@ export const worksItemDetails = {
       paragraph: `Aplikacja przedstawia uproszczony sklep, w którym użytkownik ma możliwość dodać produkt do koszyka w widoku katalogu oraz widoku danego produktu. Stan produków może być kontrolowany także w widoku szczegółowym koszyka, gdzie użytkownik może manipulować ilością konkretnych produktów w tabeli.`
     }
   ],
+  grafique: [{
+      paragraph: `Projekt grafique składa się ze strony głównej firmy wraz z poszczególnymi sekcjami takimi jak informacje o zrealizowanych projektach, zespole czy formularz z danymi kontaktowymi oraz blog. Zarówno treść poszczegolnych sekcji jak i bloga jest generowana dynamicznie na podstawie danych podanych w panelu admina.`
+    },
+    {
+      paragraph: `Grafique to szablon wordpress utworzony na bazie plików startowych, które oferuje narzędzie underscores. Dla zapewnienia responsywności skorzystałam z frameworka Bootstrap. Dodatkowo wdrożyłam slider i animacje licznika projektów i osiągnięć.`
+    }
+  ]
 };

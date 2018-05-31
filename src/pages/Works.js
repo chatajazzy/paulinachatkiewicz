@@ -7,6 +7,7 @@ import WorksSlider from '../components/WorksSlider';
 
 import expensify from '../img/expensify-mockup.jpg';
 import fluxStore from '../img/fluxstore-mockup.jpg';
+import grafique from '../img/grafique-mockup.jpg';
 
 import WorksItemDetails from './WorksItemDetails';
 
@@ -15,7 +16,6 @@ class Works extends React.Component {
       id: 'expensify',
       title: 'expensify',
       subtitle: 'Aplikacja do zarządzania wydatkami',
-      content: 'blablablabla',
       src: expensify,
       linkCode: 'https://github.com/chatajazzy/expensify',
       linkLive: 'https://chatajazzy-expensify.herokuapp.com/'
@@ -24,10 +24,17 @@ class Works extends React.Component {
       id: 'fluxstore',
       title: 'fluxstore',
       subtitle: 'Prosty sklep internetowy',
-      content: 'blablablabla',
       src: fluxStore,
       linkCode: 'https://chatajazzy.github.io/flux-demo',
       linkLive: 'https://github.com/chatajazzy/flux-demo'
+    },
+    {
+      id: 'grafique',
+      title: 'grafique',
+      subtitle: 'Strona firmowa z blogiem',
+      src: grafique,
+      linkCode: 'https://chatajazzy.github.io/grafique',
+      linkLive: 'https://grafique.000webhostapp.com/'
     }
   ];
   render() {
