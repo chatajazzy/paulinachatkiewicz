@@ -1,8 +1,11 @@
 let num_nb;
+if (window.innerWidth > 1024) {
+  num_nb = Math.round(Math.sqrt(window.innerWidth * 25));
+}
 if (window.innerWidth > 768) {
-  num_nb = Math.round(Math.sqrt(window.innerWidth * 15));
+  num_nb = Math.round(Math.sqrt(window.innerWidth * 10));
 } else {
-  num_nb = Math.round(Math.sqrt(window.innerWidth * 2));
+  num_nb = Math.round(Math.sqrt(window.innerWidth * 3));
 }
 
 export const particlesConfig = {
@@ -61,7 +64,7 @@ export const particlesConfig = {
     },
     move: {
       enable: true,
-      speed: 3,
+      speed: 4,
       direction: 'none',
       random: false,
       straight: false,
