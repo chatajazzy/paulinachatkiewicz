@@ -1,18 +1,18 @@
 import React from 'react';
-import {
-  Route
-} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import WorksSlider from '../components/WorksSlider';
 
 import expensify from '../img/expensify-mockup.jpg';
 import fluxStore from '../img/fluxstore-mockup.jpg';
 import grafique from '../img/grafique-mockup.jpg';
+import rentiamo from '../img/rentiamo-mockup.jpg';
 
 import WorksItemDetails from './WorksItemDetails';
 
 class Works extends React.Component {
-  items = [{
+  items = [
+    {
       id: 'expensify',
       title: 'expensify',
       subtitle: 'Aplikacja do zarządzania wydatkami',
@@ -35,15 +35,26 @@ class Works extends React.Component {
       src: grafique,
       linkCode: 'https://chatajazzy.github.io/grafique',
       linkLive: 'https://grafique.000webhostapp.com/'
+    },
+    {
+      id: 'rentiamo',
+      title: 'rentiamo',
+      subtitle: 'Rentiamo',
+      src: rentiamo,
+      linkCode: 'https://github.com/chatajazzy/rentiamo',
+      linkLive: 'https://chatajazzy.github.io/rentiamo'
     }
   ];
   render() {
-    return ( 
+    return (
       <div className="main__wrapper">
-        <WorksSlider items={this.items} /> 
-        <Route path = "/works/:worksId" render={props => ( 
-          <WorksItemDetails itemInfo={this.items} { ...props} />)}
-        /> 
+        <WorksSlider items={this.items} />
+        <Route
+          path="/works/:worksId"
+          render={props => (
+            <WorksItemDetails itemInfo={this.items} {...props} />
+          )}
+        />
       </div>
     );
   }

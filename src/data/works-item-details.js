@@ -20,5 +20,12 @@ export const worksItemDetails = {
     {
       paragraph: `Grafique to szablon wordpress utworzony na bazie plików startowych, które oferuje narzędzie underscores. Dla zapewnienia responsywności skorzystałam z frameworka Bootstrap. Dodatkowo wdrożyłam slider i animacje licznika projektów i osiągnięć.`
     }
+  ],
+  rentiamo: [{
+      paragraph: `Projekt Rentiamo przedstawia użycie frameworka Gatsby.js do stworzenia strony firmowej zarządcy nieruchomości. Obecnie strona składa się ze strony głównej i kilku podstron zawierających bardziej szczegółowe informacje. Docelowo projekt będzie rozszerzony o sekcję bloga oraz mape i opis pokoi do wynajęcia.`
+    },
+    {
+      paragraph: `Przy budowie projektu zdecydowałam się skorzystać z Gatsby.js, ponieważ używa service workers, code splitting, server-side rendering, GraphQL i React. Dzieki temu pozwala znacząco skrócić czas ładowania oraz daje możliwość pobierania danych z wielu źródeł. Do stylowania aplikacji wykorzystałam bibliotekę styled-components. Animacje uzyskałam przy pomocy biblioteki AOS.`
+    }
   ]
 };
